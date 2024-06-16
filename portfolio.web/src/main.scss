@@ -1,0 +1,15 @@
+:root {
+    --background-image: linear-gradient(to bottom right, #b1b4c4, #8bb5d4);
+    --color: #000000;
+
+    background-image: var(--background-image);
+    background-attachment: fixed;
+    color: var(--color);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-image: linear-gradient(to bottom right, #36373d, #1d2b36);
+        --color: #FFFFFF;
+    }
+}
