@@ -1,6 +1,11 @@
 # React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a React + Typescript application built with Vite.
+
+## Dependencies
+- React 18.2
+- Typescript 5.2.2
+- Vite 5.2
 
 ## How to build the project?
 You can build the project with the following command:
