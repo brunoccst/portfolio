@@ -1,5 +1,6 @@
 # portfolio
-My portfolio
+My portfolio.
+An online version can be found at: https://red-water-01d5c2d1e.5.azurestaticapps.net/
 
 ## How to run the project?
 
