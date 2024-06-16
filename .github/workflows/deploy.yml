@@ -13,7 +13,7 @@ jobs:
         run: cd portfolio.web
 
       - name: Install Dependencies
-        run: npm ci
+        run: npm i
 
       - name: Build project
         run: npm run build
