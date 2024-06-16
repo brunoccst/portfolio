@@ -9,19 +9,16 @@ jobs:
       - name: Repository Checkout
         uses: actions/checkout@v4
 
-      - name: Navigate to project
-        run: cd portfolio.web
-
       - name: Install Dependencies
-        run: ls && cd portfolio.web && npm i
+        run: cd portfolio.web && npm i
 
       - name: Build project
-        run: npm run build
+        run: cd portfolio.web && npm run build
 
       - name: Deploy to Netlify
         id: netlify_deploy
         run: |
-          netlify deploy \
+          cd portfolio.web && netlify deploy \
             --dir dist \
             --site ${{ secrets.NETLIFY_SITE_ID }} \
             --auth ${{ secrets.NETLIFY_API_TOKEN }}
