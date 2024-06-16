@@ -1,23 +1,11 @@
-# portfolio
+# Portfolio
 [![Portfolio CI/CD](https://github.com/brunoccst/portfolio/actions/workflows/deploy.yml/badge.svg)](https://github.com/brunoccst/portfolio/actions/workflows/deploy.yml)
 
-My portfolio.
+This repository contains my personal portfolio.
+An online version of the portfolio can be found at: [https://brunoccst.netlify.app/](https://brunoccst.netlify.app/)
 
-An online version can be found at: [https://brunoccst.netlify.app/](https://brunoccst.netlify.app/)
+## Structure
 
-## How to run the project?
-
-You can run the project in dev mode with the following command:
-
-```sh
-npm run dev
-```
-
-## How to build the project?
-You can build the project with the following command:
-
-```sh
-npm run build
-```
-
-This will generate a `dist` folder with the built files.
+This repository only has one project, `portfolio.web` - a React + TypeScript + Vite project.
+It contains the actual published web app.
+Visit its [/portfolio.web/README.md](README) for more information on how to run it.
