@@ -1,24 +1,27 @@
-name: Portfolio CI/CD
+name: Deploy website
 
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    types: [opened, synchronize, reopened, closed]
-    branches:
-      - main
+on: [push]
 
 jobs:
-  deploy:
-      name: 'Deploy to Netlify'
-      runs-on: ubuntu-latest
-      steps:
-        - uses: jsmrcaga/action-netlify-deploy@v2.0.0
-          with:
-            NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-            NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-            NETLIFY_DEPLOY_TO_PROD: true
-            NETLIFY_DEPLOY_MESSAGE: "Deployed from GitHub action"
-            build_command: "cd /portfolio.web && npm run build"
-            build_directory: "/portfolio.web/dist"
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repository Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Netlify
+        run: npm install netlify-cli@latest -g
+
+      - name: Install Dependencies
+        run: cd /portfolio.web && npm ci
+
+      - name: Build project
+        run: cd /portfolio.web && npm run build
+
+      - name: Deploy to Netlify
+        id: netlify_deploy
+        run: |
+          netlify deploy \
+            --dir /portfolio.web/dist \
+            --site ${{ secrets.NETLIFY_SITE_ID }} \
+            --auth ${{ secrets.NETLIFY_API_TOKEN }}
