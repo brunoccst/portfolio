@@ -1,7 +1,5 @@
-// import "./AboutMe.scss";
+import "./AboutMe.scss";
 
-function AboutMe() {
+export const AboutMe = () => {
   return <div>About me</div>;
 }
-
-export default AboutMe
