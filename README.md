@@ -8,4 +8,4 @@ An online version of the portfolio can be found at: [https://brunoccst.netlify.a
 
 This repository only has one project, `portfolio.web` - a React + TypeScript + Vite project.
 It contains the actual published web app.
-Visit its [/portfolio.web/README.md](README) for more information on how to run it.
+Visit its [README](/portfolio.web/README.md) for more information on how to run it.
