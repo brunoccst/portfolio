@@ -9,19 +9,19 @@ jobs:
       - name: Repository Checkout
         uses: actions/checkout@v4
 
-      - name: Install Netlify
-        run: npm install netlify-cli@latest -g
+      - name: Navigate to project
+        run: ls && cd /portfolio.web && ls
 
       - name: Install Dependencies
-        run: cd /portfolio.web && npm ci
+        run: npm ci
 
       - name: Build project
-        run: cd /portfolio.web && npm run build
+        run: npm run build
 
       - name: Deploy to Netlify
         id: netlify_deploy
         run: |
           netlify deploy \
-            --dir /portfolio.web/dist \
+            --dir dist \
             --site ${{ secrets.NETLIFY_SITE_ID }} \
             --auth ${{ secrets.NETLIFY_API_TOKEN }}
