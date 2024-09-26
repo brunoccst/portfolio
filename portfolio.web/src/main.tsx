@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { App } from 'components/app'
-import { LoadingSpinner } from 'components/loading-spinner';
+import { App } from 'components/App'
+import { LoadingSpinner } from 'components/elements/LoadingSpinner';
 import "./i18n/config";
 import './main.scss'
 import '@fontsource/roboto/300.css';

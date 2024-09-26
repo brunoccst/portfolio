@@ -1,7 +1,7 @@
 import "./LocaleSwitcher.scss";
 import { ChangeEvent } from "react";
 import { useTranslation } from "react-i18next";
-import { SupportedLngs } from "i18n/supported-lngs";
+import { SupportedLngs } from "i18n/supportedLngs";
 
 interface Language {
     code: string;

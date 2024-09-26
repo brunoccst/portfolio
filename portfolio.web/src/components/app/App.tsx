@@ -1,23 +1,33 @@
-import { Experiences } from 'components/experiences/Experiences';
-import './App.scss'
-import { AboutMe } from 'components/about-me'
-import { Header } from 'components/header';
-import { Skills } from 'components/skills';
-import { WelcomeBanner } from 'components/welcome-banner';
-import useLocalizeDocumentAttributes from "i18n/use-localize-document-attributes";
+import './App.scss';
+import { Navbar } from 'components/layout/Navbar';
+import { Sidebar } from 'components/layout/Sidebar';
+import { WelcomeBanner } from 'components/sections/WelcomeBanner';
+import { AboutMe } from 'components/sections/AboutMe'
+import { Skills } from 'components/sections/Skills';
+import { Experiences } from 'components/sections/Experiences';
+import useLocalizeDocumentAttributes from "i18n/useLocalizeDocumentAttributes";
+import { Footer } from 'components/layout/Footer';
 
 export const App = () => {
   useLocalizeDocumentAttributes();
 
   return (
     <div className="app">
+      <header>
+        <Navbar />
+      </header>
+      <aside>
+        <Sidebar />
+      </aside>
       <main>
-        <Header />
         <WelcomeBanner />
         <AboutMe />
         <Skills />
         <Experiences />
       </main>
+      <footer>
+        <Footer />
+      </footer>
     </div>
   )
 }
