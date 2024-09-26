@@ -7,6 +7,10 @@
     color: var(--color);
 }
 
+body {
+    margin: 0;
+}
+
 @media (prefers-color-scheme: dark) {
     :root {
         --background-image: linear-gradient(to bottom right, #36373d, #1d2b36);
