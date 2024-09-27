@@ -10,7 +10,6 @@ import { Footer } from 'components/layout/Footer';
 
 export const App = () => {
   useLocalizeDocumentAttributes();
-
   return (
     <div className="app">
       <header>
