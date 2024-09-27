@@ -1,10 +1,10 @@
 import "./Navbar.scss";
-import { LocaleSwitcher } from "components/elements/LocaleSwitcher";
+import { LocaleSelector } from "components/elements/LocaleSelector";
 
 export const Navbar = () => {
     return (
         <nav>
-            <LocaleSwitcher />
+            <LocaleSelector />
         </nav>
     )
 }

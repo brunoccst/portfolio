@@ -1,4 +1,3 @@
-import "./LocaleSwitcher.scss";
 import { useTranslation } from "react-i18next";
 import { Language, SupportedLngs } from "i18n/supportedLngs";
 import { Autocomplete, AutocompleteRenderInputParams, TextField } from "@mui/material";
@@ -8,7 +7,7 @@ const RenderInput = (params: AutocompleteRenderInputParams) => {
     return <TextField {...params} label={t("Language")} />
 }
 
-export const LocaleSwitcher = () => {
+export const LocaleSelector = () => {
     const { i18n } = useTranslation();
 
     const value = SupportedLngs.find(x => x.isoCode === i18n.resolvedLanguage);
