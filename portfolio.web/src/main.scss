@@ -1,15 +1,16 @@
-:root {
-    --background-image: linear-gradient(to bottom right, #b1b4c4, #8bb5d4);
-    --color: #000000;
+html {
+    width: 100%;
+    height: 100%;
 
-    background-image: var(--background-image);
-    background-attachment: fixed;
-    color: var(--color);
-}
+    body {
+        margin: 0;
+    }
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        --background-image: linear-gradient(to bottom right, #36373d, #1d2b36);
-        --color: #FFFFFF;
+    &.dark {
+        @import 'styles/dark.scss';
+    }
+
+    &.light {
+        @import 'styles/light.scss';
     }
 }

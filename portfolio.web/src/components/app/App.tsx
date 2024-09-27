@@ -1,18 +1,32 @@
-import './App.scss'
-import { useTranslation } from "react-i18next";
-import { AboutMe } from 'components/about-me'
-import { Header } from 'components/header';
-import useLocalizeDocumentAttributes from "i18n/use-localize-document-attributes";
+import './App.scss';
+import { Navbar } from 'components/layout/Navbar';
+import { Sidebar } from 'components/layout/Sidebar';
+import { WelcomeBanner } from 'components/sections/WelcomeBanner';
+import { AboutMe } from 'components/sections/AboutMe'
+import { Skills } from 'components/sections/Skills';
+import { Experiences } from 'components/sections/Experiences';
+import useLocalizeDocumentAttributes from "i18n/useLocalizeDocumentAttributes";
+import { Footer } from 'components/layout/Footer';
 
 export const App = () => {
-  const { t } = useTranslation();
   useLocalizeDocumentAttributes();
-  
   return (
-    <>
-      <Header />
-      <h2>{t("Welcome")}</h2>
-      <AboutMe />
-    </>
+    <div className="app">
+      <header>
+        <Navbar />
+      </header>
+      <aside>
+        <Sidebar />
+      </aside>
+      <main>
+        <WelcomeBanner />
+        <AboutMe />
+        <Skills />
+        <Experiences />
+      </main>
+      <footer>
+        <Footer />
+      </footer>
+    </div>
   )
 }
