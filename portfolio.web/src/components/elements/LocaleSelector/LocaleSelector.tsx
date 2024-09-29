@@ -1,3 +1,4 @@
+import { SyntheticEvent } from "react";
 import { useTranslation } from "react-i18next";
 import { Language, SupportedLngs } from "i18n/supportedLngs";
 import { Autocomplete, AutocompleteRenderInputParams, TextField } from "@mui/material";
@@ -12,7 +13,7 @@ export const LocaleSelector = () => {
 
     const value = SupportedLngs.find(x => x.isoCode === i18n.resolvedLanguage);
     const getOptionLabel = ({ name }: Language) => name;
-    const onChange = (_: any, newValue: Language | null) => i18n.changeLanguage(newValue?.isoCode);
+    const onChange = (_: SyntheticEvent, newValue: Language | null) => i18n.changeLanguage(newValue?.isoCode);
 
     return (
         <Autocomplete
