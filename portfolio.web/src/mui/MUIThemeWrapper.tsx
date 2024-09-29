@@ -6,6 +6,16 @@ const theme = createTheme({
     colorSchemes: {
         light: true,
         dark: true
+    },
+    components: {
+        MuiToggleButton: {
+            styleOverrides: {
+                root: {
+                    gap: '4px',
+                    lineHeight: '15px'
+                }
+            }
+        }
     }
 });
 
