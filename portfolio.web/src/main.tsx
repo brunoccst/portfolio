@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import CircularProgress from '@mui/material/CircularProgress';
 import { MUIThemeWrapper } from 'mui/MUIThemeWrapper';
-import { App } from 'components/App'
+import { App } from 'components/app'
 import "./i18n/config";
 import './main.scss'
 import '@fontsource/roboto/300.css';
