@@ -10,8 +10,9 @@ import useLocalizeDocumentAttributes from "i18n/useLocalizeDocumentAttributes";
 
 export const App = () => {
   useLocalizeDocumentAttributes();
+
   return (
-    <div className="app">
+    <>
       <header>
         <Navbar />
       </header>
@@ -27,6 +28,6 @@ export const App = () => {
       <footer>
         <Footer />
       </footer>
-    </div>
+    </>
   )
 }

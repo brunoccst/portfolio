@@ -1,11 +1,11 @@
 import "./Navbar.scss";
-import { ThemeToggle } from "components/elements/ThemeToggle";
+import { ModeToggle } from "components/elements/ThemeToggle";
 import { LocaleSelector } from "components/elements/LocaleSelector";
 
 export const Navbar = () => {
     return (
         <nav>
-            <ThemeToggle />
+            <ModeToggle />
             <LocaleSelector />
         </nav>
     )

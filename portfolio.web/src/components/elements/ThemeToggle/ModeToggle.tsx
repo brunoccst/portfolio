@@ -1,24 +1,23 @@
 import { useTranslation } from "react-i18next";
 import { ToggleButtonGroup, ToggleButton, useColorScheme } from "@mui/material";
 import { SettingsBrightness, DarkMode, LightMode } from "@mui/icons-material";
+import { Mode } from "@mui/system/cssVars/useCurrentColorScheme";
 
-type Theme = 'system' | 'dark' | 'light';
-
-export const ThemeToggle = () => {
+export const ModeToggle = () => {
     const { t } = useTranslation();
     const { mode, setMode } = useColorScheme();
     
     if (!mode)
         return null;
 
-    const onChange = (_: React.MouseEvent<HTMLElement>, newTheme: Theme | null) => setMode(newTheme ?? 'system');
+    const onChange = (_: React.MouseEvent<HTMLElement>, newMode: Mode | null) => setMode(newMode ?? 'system');
 
     return (
         <ToggleButtonGroup
             value={mode}
             exclusive
             onChange={onChange}
-            aria-label={t("Theme")}
+            aria-label={t("Mode")}
         >
             <ToggleButton value="system" aria-label={t("System")}>
                 <SettingsBrightness />
