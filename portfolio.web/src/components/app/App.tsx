@@ -1,5 +1,5 @@
 import './App.scss';
-import { Navbar } from 'components/layout/Navbar';
+// import { Navbar } from 'components/layout/Navbar';
 import { Sidebar } from 'components/layout/Sidebar';
 import { Footer } from 'components/layout/Footer';
 import { WelcomeBanner } from 'components/sections/WelcomeBanner';
@@ -13,7 +13,7 @@ export const App = () => {
   return (
     <div className="app">
       <header>
-        <Navbar />
+        {/* <Navbar /> */}
       </header>
       <aside>
         <Sidebar />
