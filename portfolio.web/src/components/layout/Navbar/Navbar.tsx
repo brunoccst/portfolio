@@ -5,6 +5,7 @@ import { AppBar } from "@mui/material";
 import { Settings } from "@mui/icons-material";
 import { ModeToggle } from "components/elements/ModeToggle";
 import { LocaleSelector } from "components/elements/LocaleSelector";
+import Logo from "assets/logo.png";
 
 export const Navbar = () => {
     const { t } = useTranslation();
@@ -16,11 +17,14 @@ export const Navbar = () => {
     return (
         <AppBar>
             <nav className={`navbar ${expandedClass}`}>
+                <img src={Logo} id="logo" />
                 <span className="settings-container">
-                    <LocaleSelector />
-                    <ModeToggle />
+                    <span className="settings-container-inner">
+                        <LocaleSelector />
+                        <ModeToggle />
+                    </span>
+                    <Settings onClick={toggleExpanded} aria-label={t("Settings")} id="settings-icon" />
                 </span>
-                <Settings onClick={toggleExpanded} aria-label={t("Settings")} id="settings-icon" />
             </nav>
         </AppBar>
     )
