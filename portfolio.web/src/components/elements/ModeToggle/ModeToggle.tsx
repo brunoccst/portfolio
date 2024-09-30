@@ -6,7 +6,7 @@ import { Mode } from "@mui/system/cssVars/useCurrentColorScheme";
 export const ModeToggle = () => {
     const { t } = useTranslation();
     const { mode, setMode } = useColorScheme();
-    
+
     if (!mode)
         return null;
 
@@ -18,6 +18,7 @@ export const ModeToggle = () => {
             exclusive
             onChange={onChange}
             aria-label={t("Mode")}
+            itemID="mode-toggle"
             size="small"
         >
             <ToggleButton value="system" aria-label={t("System")}>

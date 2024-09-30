@@ -1,6 +1,41 @@
-nav.navbar {
+header .navbar {
     display: flex;
     justify-content: flex-end;
-    gap: 40px;
+    align-items: center;
+    gap: 20px;
     padding: 10px;
+
+    .settings-container {
+        flex-basis: 580px;
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateX(100%);
+        transform-origin: right;
+        transition: all 0.8s ease-out;
+
+        [itemid="locale-selector"] {
+            flex-basis: 370px;
+        }
+    }
+
+    #settings-icon {
+        cursor: pointer;
+        transform: rotate(180deg);
+        transition: transform 0.8s linear;
+    }
+
+    &.expanded {
+        .settings-container {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(0%);
+        }
+
+        #settings-icon {
+            transform: rotate(-180deg);
+        }
+    }
 }
