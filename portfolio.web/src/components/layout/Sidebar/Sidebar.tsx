@@ -1,19 +1,14 @@
-import { Paper } from '@mui/material';
 import './Sidebar.scss';
 import { useTranslation } from 'react-i18next';
+import { Paper } from '@mui/material';
+import Headshot from "assets/headshot.jpg";
 
 export const Sidebar = () => {
     const { t } = useTranslation();
 
     return (
-        <Paper>
-            <nav>
-                <ul>
-                    <li><a href="#about-me">{t("About Me")}</a></li>
-                    <li><a href="#skills">{t("Skills")}</a></li>
-                    <li><a href="#experience">{t("Experience")}</a></li>
-                </ul>
-            </nav>
+        <Paper itemID='sidebar'>
+            <img src={Headshot} aria-label={t("Headshot")}/>
         </Paper>
     )
 }
