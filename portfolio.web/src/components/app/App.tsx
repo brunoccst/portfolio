@@ -7,6 +7,7 @@ import { AboutMe } from 'components/sections/AboutMe'
 import { Skills } from 'components/sections/Skills';
 import { Experiences } from 'components/sections/Experiences';
 import useLocalizeDocumentAttributes from "i18n/useLocalizeDocumentAttributes";
+import { Paper } from '@mui/material';
 
 export const App = () => {
   useLocalizeDocumentAttributes();
@@ -18,10 +19,12 @@ export const App = () => {
         <Sidebar />
       </aside>
       <main>
-        <WelcomeBanner />
-        <AboutMe />
-        <Skills />
-        <Experiences />
+        <Paper>
+          <WelcomeBanner />
+          <AboutMe />
+          <Skills />
+          <Experiences />
+        </Paper>
       </main>
       <footer>
         <Footer />
