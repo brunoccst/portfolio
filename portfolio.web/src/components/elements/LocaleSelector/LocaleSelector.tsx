@@ -21,7 +21,10 @@ export const LocaleSelector = () => {
 
     const value = SupportedLngs.find(x => x.isoCode === i18n.resolvedLanguage);
     const getOptionLabel = ({ name }: Language) => name;
-    const onChange = (_: SyntheticEvent, newValue: Language | null) => i18n.changeLanguage(newValue?.isoCode);
+    const onChange = (ev: SyntheticEvent, newValue: Language | null) => {
+        ev.stopPropagation();
+        i18n.changeLanguage(newValue?.isoCode)
+    };
 
     return (
         <>

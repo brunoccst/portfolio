@@ -16,7 +16,6 @@ i18n
             "default": ["en-US"]
         },
         supportedLngs: supportedLngs,
-        debug: true,
         load: 'currentOnly',
         interpolation: {
             escapeValue: false,
