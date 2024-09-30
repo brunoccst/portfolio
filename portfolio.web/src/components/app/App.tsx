@@ -13,9 +13,7 @@ export const App = () => {
 
   return (
     <>
-      <header>
-        <Navbar />
-      </header>
+      <Navbar />
       <aside>
         <Sidebar />
       </aside>

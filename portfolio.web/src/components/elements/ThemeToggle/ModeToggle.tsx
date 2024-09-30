@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { ToggleButtonGroup, ToggleButton, useColorScheme } from "@mui/material";
-import { SettingsBrightness, DarkMode, LightMode } from "@mui/icons-material";
+import { SettingsBrightness, DarkMode, LightMode, } from "@mui/icons-material";
 import { Mode } from "@mui/system/cssVars/useCurrentColorScheme";
 
 export const ModeToggle = () => {
@@ -18,6 +18,7 @@ export const ModeToggle = () => {
             exclusive
             onChange={onChange}
             aria-label={t("Mode")}
+            size="small"
         >
             <ToggleButton value="system" aria-label={t("System")}>
                 <SettingsBrightness />
