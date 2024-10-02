@@ -101,6 +101,19 @@ $dark-percentage-4: 70%;
         }
     }
 
+    // Pseudo-element for blur effect on the bottom (give it a 'lake' look)
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 20%;
+        background: inherit;
+        filter: blur(100px);
+        z-index: 1;
+    }
+
     img {
         position: absolute;
         left: 0;
