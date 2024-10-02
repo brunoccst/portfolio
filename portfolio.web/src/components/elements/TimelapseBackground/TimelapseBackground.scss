@@ -1,3 +1,75 @@
+// SCSS variables for the transition
+$transition-time: 3s;
+
+// SCSS variables for the light mode
+$background-1: #061426;
+$background-2: #2c4d75;
+$background-3: #3b5b8a;
+$background-4: #274870;
+$background-5: #0b213f;
+$percentage-2: 60%;
+$percentage-3: 72%;
+$percentage-4: 85%;
+
+// SCSS variables for the dark mode
+$dark-background-1: #000000;
+$dark-background-2: #0e1825;
+$dark-background-3: #182437;
+$dark-background-4: #15283e;
+$dark-background-5: #111221;
+$dark-percentage-2: 30%;
+$dark-percentage-3: 60%;
+$dark-percentage-4: 70%;
+
+// Define the @property rules for the variables above
+@property --background-1 {
+    syntax: '<color>';
+    initial-value: #{$background-1};
+    inherits: false;
+}
+
+@property --background-2 {
+    syntax: '<color>';
+    initial-value: #{$background-2};
+    inherits: false;
+}
+
+@property --background-3 {
+    syntax: '<color>';
+    initial-value: #{$background-3};
+    inherits: false;
+}
+
+@property --background-4 {
+    syntax: '<color>';
+    initial-value: #{$background-4};
+    inherits: false;
+}
+
+@property --background-5 {
+    syntax: '<color>';
+    initial-value: #{$background-5};
+    inherits: false;
+}
+
+@property --percentage-2 {
+    syntax: '<percentage>';
+    initial-value: #{$percentage-2};
+    inherits: false;
+}
+
+@property --percentage-3 {
+    syntax: '<percentage>';
+    initial-value: #{$percentage-3};
+    inherits: false;
+}
+
+@property --percentage-4 {
+    syntax: '<percentage>';
+    initial-value: #{$percentage-4};
+    inherits: false;
+}
+
 #timelapse-background {
     width: 100vw;
     height: 100vh;
@@ -5,7 +77,27 @@
     left: 0;
     top: 0;
     z-index: -1;
-    background: linear-gradient(to bottom, #061426, #2c4d75 40%, #3b5b8a 60%, #274870 80%, #0b213f);
+
+    // Use CSS variables for colors and percentages in the gradient
+    background: linear-gradient(
+        to bottom,
+        var(--background-1),
+        var(--background-2) var(--percentage-2),
+        var(--background-3) var(--percentage-3),
+        var(--background-4) var(--percentage-4),
+        var(--background-5)
+    );
+
+    // Transition between background colors and percentages
+    transition: 
+        --background-1 $transition-time, 
+        --background-2 $transition-time, 
+        --background-3 $transition-time, 
+        --background-4 $transition-time, 
+        --background-5 $transition-time, 
+        --percentage-2 $transition-time, 
+        --percentage-3 $transition-time, 
+        --percentage-4 $transition-time;
 
     img {
         position: absolute;
@@ -14,5 +106,25 @@
         width: 100%;
         height: 60%;
         filter: brightness(0.5) blur(0.3px);
+        transition: filter $transition-time ease-in-out;
+    }
+
+    // Dark mode
+    &.dark {
+        // Use dark background variables for the gradient colors
+        --background-1: #{$dark-background-1};
+        --background-2: #{$dark-background-2};
+        --background-3: #{$dark-background-3};
+        --background-4: #{$dark-background-4};
+        --background-5: #{$dark-background-5};
+
+        // Use dark mode percentages
+        --percentage-2: #{$dark-percentage-2};
+        --percentage-3: #{$dark-percentage-3};
+        --percentage-4: #{$dark-percentage-4};
+
+        img {
+            filter: brightness(0.1) blur(0.3px);
+        }
     }
 }
