@@ -21,19 +21,17 @@ export const Navbar = () => {
                 <Icon sx={{ width: '19px', height: '27px' }}>
                     <LogoIcon />
                 </Icon>
-                <Box itemID='settings-box'>
-                    <Dialog open={settingsOpen} onClose={handleSettingsClick} hideBackdrop={true}>
-                        <DialogTitle>{t('Settings')}</DialogTitle>
-                        <DialogContent>
-                            <Typography>{t('Language')}</Typography>
-                            <LocaleSelector />
-                            <Typography>{t('Modo')}</Typography>
-                            <ModeToggle />
-                        </DialogContent>
-                    </Dialog>
-                    <Settings onClick={handleSettingsClick} className={settingsOpen ? 'open' : ''}/>
-                </Box>
+                <Settings onClick={handleSettingsClick} className={settingsOpen ? 'open' : ''} id="settings-icon" />
             </Toolbar>
+            <Dialog open={settingsOpen} onClose={handleSettingsClick} hideBackdrop={true}>
+                <DialogTitle>{t('Settings')}</DialogTitle>
+                <DialogContent>
+                    <Typography>{t('Language')}</Typography>
+                    <LocaleSelector />
+                    <Typography>{t('Modo')}</Typography>
+                    <ModeToggle />
+                </DialogContent>
+            </Dialog>
         </AppBar>
     );
 }

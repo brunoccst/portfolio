@@ -4,19 +4,13 @@ header nav>div {
     flex-wrap: wrap;
     gap: 20px;
 
-    [itemID='settings-box'] {
-        flex-direction: row;
-        align-items: center;
-        gap: 20px;
+    #settings-icon {
+        $rotation: 90deg;
+        transform: rotate($rotation);
+        transition: transform 0.5s linear;
 
-        >svg {
-            $rotation: 90deg;
-            transform: rotate($rotation);
-            transition: transform 0.5s linear;
-
-            &.open {
-                transform: rotate(-$rotation);
-            }
+        &.open {
+            transform: rotate(-$rotation);
         }
     }
 }
