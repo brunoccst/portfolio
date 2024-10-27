@@ -15,29 +15,6 @@ import { LocaleSelector } from "components/elements/LocaleSelector";
 import { ModeToggle } from "components/elements/ModeToggle";
 import { t } from "i18next";
 
-const DrawerBox = () => {
-    return (
-        <Box sx={{ textAlign: 'center' }}>
-            <Icon sx={{ mt: 1, width: '19px', height: '27px' }}>
-                <LogoIcon />
-            </Icon>
-            <Divider />
-            <List>
-                <ListItem key="language" disablePadding>
-                    <ListItemButton sx={{ textAlign: 'center' }}>
-                        <ListItemText primary={"Language"} />
-                    </ListItemButton>
-                </ListItem>
-                <ListItem key="mode" disablePadding>
-                    <ListItemButton sx={{ textAlign: 'center' }}>
-                        <ListItemText primary={"Mode"} />
-                    </ListItemButton>
-                </ListItem>
-            </List>
-        </Box>
-    );
-}
-
 export const Navbar = () => {
     const [settingsOpen, setSettingsOpen] = useState(false);
 
