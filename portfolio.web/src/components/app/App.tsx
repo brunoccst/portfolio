@@ -15,18 +15,20 @@ export const App = () => {
   return (
     <>
       <TimelapseBackground />
-      <Navbar />
+      <header>
+        <Navbar />
+      </header>
       <aside>
-        <Sidebar />
+        {/* <Sidebar /> */}
       </aside>
       <main>
-        <WelcomeBanner />
+        {/* <WelcomeBanner />
         <AboutMe />
         <Skills />
-        <Experiences />
+        <Experiences /> */}
       </main>
       <footer>
-        <Footer />
+        {/* <Footer /> */}
       </footer>
     </>
   )

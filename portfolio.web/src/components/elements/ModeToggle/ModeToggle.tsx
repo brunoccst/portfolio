@@ -1,3 +1,4 @@
+import "./ModeToggle.scss";
 import { useTranslation } from "react-i18next";
 import { ToggleButtonGroup, ToggleButton, useColorScheme } from "@mui/material";
 import { SettingsBrightness, DarkMode, LightMode, } from "@mui/icons-material";
@@ -11,7 +12,7 @@ export const ModeToggle = () => {
         return null;
 
     const onChange = (_: React.MouseEvent<HTMLElement>, newMode: Mode | null) => setMode(newMode ?? 'system');
-
+    const buttonSx = { flexBasis: { xs: '100%', md: '30%' }}
     return (
         <ToggleButtonGroup
             value={mode}
@@ -21,15 +22,15 @@ export const ModeToggle = () => {
             itemID="mode-toggle"
             size="small"
         >
-            <ToggleButton value="system" aria-label={t("System")}>
+            <ToggleButton value="system" aria-label={t("System")} sx={buttonSx}>
                 <SettingsBrightness />
                 <span>{t("System")}</span>
             </ToggleButton>
-            <ToggleButton value="dark" aria-label={t("Dark")}>
+            <ToggleButton value="dark" aria-label={t("Dark")} sx={buttonSx}>
                 <DarkMode />
                 <span>{t("Dark")}</span>
             </ToggleButton>
-            <ToggleButton value="light" aria-label={t("Light")}>
+            <ToggleButton value="light" aria-label={t("Light")} sx={buttonSx}>
                 <LightMode />
                 <span>{t("Light")}</span>
             </ToggleButton>

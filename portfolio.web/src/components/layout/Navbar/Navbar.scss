@@ -1,54 +1,30 @@
-header .navbar {
-    display: flex;
+header nav>div {
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
     gap: 20px;
-    padding: 5px 0px;
 
-    #logo {
-        width: 20px;
-    }
-
-    .settings-container {
-        display: flex;
+    [itemID='settings-box'] {
+        flex-direction: row;
         align-items: center;
         gap: 20px;
 
-        &-inner {
-            display: flex;
-            gap: 40px;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateX(100%);
-            transform-origin: right;
-            transition: all 0.8s ease-out;
-            pointer-events: none;
+        >svg {
+            $rotation: 90deg;
+            transform: rotate($rotation);
+            transition: transform 0.5s linear;
 
-            [itemid="locale-selector"] {
-                min-width: 300px;
+            &.open {
+                transform: rotate(-$rotation);
             }
-        }
-
-        #settings-icon {
-            cursor: pointer;
-            transform: rotate(180deg);
-            transition: transform 0.8s linear;
         }
     }
+}
 
-    &.expanded {
-        .settings-container {
-
-            &-inner {
-                opacity: 1;
-                visibility: visible;
-                transform: translateX(0%);
-                pointer-events: all;
-            }
-
-            #settings-icon {
-                transform: rotate(-180deg);
-            }
-        }
+[role='presentation'] {
+    .MuiDialogContent-root {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
     }
 }

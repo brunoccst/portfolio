@@ -1,56 +1,70 @@
 import "./Navbar.scss";
-import { useEffect, useRef, useState } from "react";
-import { useTranslation } from "react-i18next";
-import { AppBar } from "@mui/material";
-import { Settings } from "@mui/icons-material";
-import { ModeToggle } from "components/elements/ModeToggle";
+import { useState, createContext, useContext } from 'react';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Divider from '@mui/material/Divider';
+import Drawer from '@mui/material/Drawer';
+import IconButton from '@mui/material/IconButton';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemText from '@mui/material/ListItemText';
+import MenuIcon from '@mui/icons-material/Menu';
+import Settings from '@mui/icons-material/Settings';
+import Toolbar from '@mui/material/Toolbar';
+import { LogoIcon } from "components/elements/LogoIcon";
+import { Dialog, DialogContent, DialogTitle, Icon, Modal, Paper, Typography } from '@mui/material';
 import { LocaleSelector } from "components/elements/LocaleSelector";
-import Logo from "assets/logo.png";
+import { ModeToggle } from "components/elements/ModeToggle";
+import { t } from "i18next";
+
+const DrawerBox = () => {
+    return (
+        <Box sx={{ textAlign: 'center' }}>
+            <Icon sx={{ mt: 1, width: '19px', height: '27px' }}>
+                <LogoIcon />
+            </Icon>
+            <Divider />
+            <List>
+                <ListItem key="language" disablePadding>
+                    <ListItemButton sx={{ textAlign: 'center' }}>
+                        <ListItemText primary={"Language"} />
+                    </ListItemButton>
+                </ListItem>
+                <ListItem key="mode" disablePadding>
+                    <ListItemButton sx={{ textAlign: 'center' }}>
+                        <ListItemText primary={"Mode"} />
+                    </ListItemButton>
+                </ListItem>
+            </List>
+        </Box>
+    );
+}
 
 export const Navbar = () => {
-    const { t } = useTranslation();
-    const [expanded, setExpanded] = useState<boolean>(false);
-    const settingsContainerRef = useRef<HTMLSpanElement>(null);
+    const [settingsOpen, setSettingsOpen] = useState(false);
 
-    useEffect(() => {
-        const onClick = (ev: MouseEvent) => {
-            if (settingsContainerRef.current?.contains(ev.target as Node))
-                return;
-                
-            setExpanded(false);
-        };
-
-        if (expanded)
-            document.addEventListener('click', onClick);
-        else
-            document.removeEventListener('click', onClick)
-
-        return () => document.removeEventListener('click', onClick);
-    }, [expanded])
-
-    const toggleExpanded = (ev: React.MouseEvent) => {
-        ev.stopPropagation();
-        setExpanded(!expanded)
-    };
-
-    const expandedClass = expanded ? "expanded" : "";
+    const handleSettingsClick = () => setSettingsOpen((prevState) => !prevState);
 
     return (
-        <AppBar>
-            <nav className={`navbar ${expandedClass}`}>
-                <img src={Logo} id="logo" />
-                <span className="settings-container" ref={settingsContainerRef}>
-                    <span className="settings-container-inner">
-                        <LocaleSelector />
-                        <ModeToggle />
-                    </span>
-                    <Settings
-                        onClick={toggleExpanded}
-                        aria-label={t("Settings")}
-                        id="settings-icon"
-                    />
-                </span>
-            </nav>
+        <AppBar component="nav">
+            <Toolbar>
+                <Icon sx={{ width: '19px', height: '27px' }}>
+                    <LogoIcon />
+                </Icon>
+                <Box itemID='settings-box'>
+                    <Dialog open={settingsOpen} onClose={handleSettingsClick} hideBackdrop={true}>
+                        <DialogTitle>{t('Settings')}</DialogTitle>
+                        <DialogContent>
+                            <Typography>{t('Language')}</Typography>
+                            <LocaleSelector />
+                            <Typography>{t('Modo')}</Typography>
+                            <ModeToggle />
+                        </DialogContent>
+                    </Dialog>
+                    <Settings onClick={handleSettingsClick} className={settingsOpen ? 'open' : ''}/>
+                </Box>
+            </Toolbar>
         </AppBar>
-    )
+    );
 }

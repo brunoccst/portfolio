@@ -30,7 +30,6 @@ export const LocaleSelector = () => {
         <>
             <Autocomplete
                 aria-label={t("Language")}
-                disablePortal
                 options={SupportedLngs}
                 getOptionLabel={getOptionLabel}
                 value={value}

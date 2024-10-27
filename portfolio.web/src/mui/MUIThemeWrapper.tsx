@@ -15,6 +15,13 @@ const theme = createTheme({
                     lineHeight: '15px'
                 }
             }
+        },
+        MuiAutocomplete: {
+            styleOverrides: {
+                popper: {
+                    zIndex: 1300
+                }
+            }
         }
     }
 });
