@@ -1,0 +1,43 @@
+:root {
+  // Light theme colors
+  --bg-color-light: #f0f0f0;
+  --text-color-light: #1a1a1a;
+  --text-color-secondary-light: rgba(26, 26, 26, 0.7);
+  --card-bg-light: rgba(255, 255, 255, 0.9);
+  --border-color-light: rgba(26, 26, 26, 0.3);
+  
+  // Dark theme colors
+  --bg-color-dark: #1a1a1a;
+  --text-color-dark: #fff;
+  --text-color-secondary-dark: rgba(255, 255, 255, 0.7);
+  --card-bg-dark: rgba(30, 30, 30, 0.9);
+  --border-color-dark: rgba(255, 255, 255, 0.2);
+  
+  // Common variables
+  --transition-duration: 0.3s;
+  --transition-timing: ease-in-out;
+  --border-radius: 12px;
+  --card-padding: 20px;
+
+  // Transition properties
+  --transition-props: background-color var(--transition-duration) var(--transition-timing),
+                     color var(--transition-duration) var(--transition-timing),
+                     border-color var(--transition-duration) var(--transition-timing),
+                     box-shadow var(--transition-duration) var(--transition-timing);
+}
+
+[data-theme='light'] {
+  --bg-color: var(--bg-color-light);
+  --text-color: var(--text-color-light);
+  --text-color-secondary: var(--text-color-secondary-light);
+  --card-bg: var(--card-bg-light);
+  --border-color: var(--border-color-light);
+}
+
+[data-theme='dark'] {
+  --bg-color: var(--bg-color-dark);
+  --text-color: var(--text-color-dark);
+  --text-color-secondary: var(--text-color-secondary-dark);
+  --card-bg: var(--card-bg-dark);
+  --border-color: var(--border-color-dark);
+} 

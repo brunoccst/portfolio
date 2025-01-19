@@ -1,0 +1,29 @@
+{
+  "about": {
+    "title": "Sobre Mim",
+    "description": "Sou um desenvolvedor apaixonado..."
+  },
+  "skills": {
+    "title": "Habilidades",
+    "frontend": "Desenvolvimento Frontend",
+    "backend": "Desenvolvimento Backend",
+    "tools": "Ferramentas & Tecnologias"
+  },
+  "experience": {
+    "title": "Experiência",
+    "years": "{{years}} anos"
+  },
+  "brand": {
+    "name": "Meu Portfólio"
+  },
+  "settings": {
+    "language": "Idioma",
+    "theme": "Tema",
+    "light": "Claro",
+    "dark": "Escuro"
+  },
+  "navigation": {
+    "about": "Sobre mim",
+    "experience": "Experiência"
+  }
+} 

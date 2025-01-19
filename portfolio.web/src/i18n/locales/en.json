@@ -1,0 +1,29 @@
+{
+  "about": {
+    "title": "About Me",
+    "description": "I am a passionate software developer..."
+  },
+  "skills": {
+    "title": "Skills",
+    "frontend": "Frontend Development",
+    "backend": "Backend Development",
+    "tools": "Tools & Technologies"
+  },
+  "experience": {
+    "title": "Experience",
+    "years": "{{years}} years"
+  },
+  "brand": {
+    "name": "My Portfolio"
+  },
+  "settings": {
+    "language": "Language",
+    "theme": "Theme",
+    "light": "Light",
+    "dark": "Dark"
+  },
+  "navigation": {
+    "about": "About me",
+    "experience": "Experience"
+  }
+} 
