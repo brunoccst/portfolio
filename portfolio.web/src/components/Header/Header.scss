@@ -2,6 +2,8 @@
 
 .header {
   position: absolute;
+  top: 20px;
+  left: 20px;
   white-space: nowrap;
 
   &.center {
@@ -9,6 +11,10 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
     .text-container {
       font-size: clamp(1rem, min(4vw, 4vh), 2rem);
