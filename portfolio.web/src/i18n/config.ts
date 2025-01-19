@@ -22,11 +22,4 @@ i18n
     }
   });
 
-/**
- * Changes the current language of the application.
- * @param language - The language code to switch to (e.g. 'en', 'pt')
- * @returns A promise that resolves when the language change is complete
- */
-export const changeLanguage = async (language: string) =>  await i18n.changeLanguage(language);
-
 export default i18n;

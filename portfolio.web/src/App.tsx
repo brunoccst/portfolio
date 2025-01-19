@@ -2,16 +2,19 @@ import Settings from './components/Settings';
 import Header from './components/Header';
 import Navigation from './components/Navigation';
 import './styles/App.scss';
+import { SettingsProvider } from './contexts/SettingsContext';
 
 function App() {
   return (
-    <div className="app">
-      <div className="container">
-        <Header />
-        <Navigation />
-        <Settings />
+    <SettingsProvider>
+      <div className="app">
+        <div className="container">
+          <Header />
+          <Navigation />
+          <Settings />
+        </div>
       </div>
-    </div>
+    </SettingsProvider>
   );
 }
 
