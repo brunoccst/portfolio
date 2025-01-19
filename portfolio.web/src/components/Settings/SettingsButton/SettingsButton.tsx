@@ -18,7 +18,6 @@ const SettingsButton = () => {
       }}
       transition={{ 
         opacity: { delay: 4, duration: 0.8 },
-        rotate: { duration: 0.3 },
         pointerEvents: { delay: 4 }
       }}
       aria-label="Settings"
