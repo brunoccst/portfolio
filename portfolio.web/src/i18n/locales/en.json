@@ -16,6 +16,9 @@
   "brand": {
     "name": "My Portfolio"
   },
+  "role": {
+    "title": "Software Engineer & Team Lead"
+  },
   "settings": {
     "language": "Language",
     "theme": "Theme",

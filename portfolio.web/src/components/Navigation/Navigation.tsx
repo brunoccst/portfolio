@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import './Navigation.scss';
 
 type Section = 'about' | 'experience' | null;
@@ -41,7 +41,6 @@ const Navigation = () => {
         </ul>
       </motion.nav>
 
-      <AnimatePresence mode="wait">
         {activeSection && (
           <motion.div 
             className="content-card"
@@ -65,7 +64,6 @@ const Navigation = () => {
             )}
           </motion.div>
         )}
-      </AnimatePresence>
     </>
   );
 };

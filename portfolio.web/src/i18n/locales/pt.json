@@ -16,6 +16,9 @@
   "brand": {
     "name": "Meu Portfólio"
   },
+  "role": {
+    "title": "Engenheiro de Software & Líder de Equipe"
+  },
   "settings": {
     "language": "Idioma",
     "theme": "Tema",
