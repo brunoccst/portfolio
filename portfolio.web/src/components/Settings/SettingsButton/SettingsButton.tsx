@@ -7,7 +7,7 @@ const SettingsButton = () => {
 
   return (
     <button
-      className={`settings-button animate-fade ${isSettingsOpen ? 'active' : ''}`}
+      className={`settings-button animate-slide-in-right-delayed ${isSettingsOpen ? 'active' : ''}`}
       onClick={toggleSettings}
       aria-label="Settings"
     >

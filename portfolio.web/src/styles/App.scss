@@ -19,18 +19,6 @@
   flex: 1;
   border: 1px solid var(--border-color);
   position: relative;
-
-  // Hide all direct children except the centered header
-  > *:not(.header.center) {
-    visibility: hidden;
-    animation: showContent 0.1s 4s forwards;
-  }
-}
-
-@keyframes showContent {
-  to {
-    visibility: visible;
-  }
 }
 
 .background {
