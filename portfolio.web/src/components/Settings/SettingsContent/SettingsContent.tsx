@@ -1,5 +1,4 @@
 import { useTranslation } from 'react-i18next';
-import { motion } from 'framer-motion';
 import { useTheme } from '../../../contexts/ThemeContext';
 import { useSettings } from '../../../contexts/SettingsContext';
 import './SettingsContent.scss';
@@ -15,44 +14,37 @@ const SettingsContent = () => {
   if (!isSettingsOpen) return null;
   
   return (
-    <motion.div
-        className="settings-content"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: 20 }}
-        transition={{ duration: 1 }}
-        key="settings"
-    >
-        <div className="settings-section">
+    <div className="settings-content animate-slide-in-left-delayed">
+      <div className="settings-section">
         <label htmlFor="language">{t('settings.language')}</label>
         <select
-            id="language"
-            value={i18n.language}
-            onChange={handleLanguageChange}
+          id="language"
+          value={i18n.language}
+          onChange={handleLanguageChange}
         >
-            <option value="en">English</option>
-            <option value="pt">Português</option>
+          <option value="en">English</option>
+          <option value="pt">Português</option>
         </select>
-        </div>
+      </div>
 
-        <div className="settings-section">
+      <div className="settings-section">
         <label>{t('settings.theme')}</label>
         <div className="theme-buttons">
-            <button
+          <button
             className={`theme-button ${theme === 'light' ? 'active' : ''}`}
             onClick={() => theme === 'dark' && toggleTheme()}
-            >
+          >
             {t('settings.light')}
-            </button>
-            <button
+          </button>
+          <button
             className={`theme-button ${theme === 'dark' ? 'active' : ''}`}
             onClick={() => theme === 'light' && toggleTheme()}
-            >
+          >
             {t('settings.dark')}
-            </button>
+          </button>
         </div>
-        </div>
-    </motion.div>
+      </div>
+    </div>
   );
 };
 
