@@ -1,54 +1,41 @@
-import { useState } from 'react';
-import { useTranslation } from 'react-i18next';
+import { NavigationProvider, useNavigation } from '../../contexts/NavigationContext';
+import NavItem from './NavItem';
+import sectionComponents from './Sections';
 import './Navigation.scss';
 
-type Section = 'about' | 'experience' | null;
+const navItems: Record<string, { section: string, label: string }> = {
+  about: { section: "about", label: "navigation.about" },
+  experience: { section: "experience", label: "navigation.experience" }
+};
 
-const Navigation = () => {
-  const [activeSection, setActiveSection] = useState<Section>(null);
-  const { t } = useTranslation();
+const NavigationContent = () => {
+  const { activeSection } = useNavigation();
 
   return (
     <>
       <nav className="navigation animate-slide-in-right-delayed">
         <ul>
-          <li>
-            <button 
-              className={activeSection === 'about' ? 'active' : ''}
-              onClick={() => setActiveSection(activeSection === 'about' ? null : 'about')}
-            >
-              {t('navigation.about')}
-            </button>
-          </li>
-          <li>
-            <button 
-              className={activeSection === 'experience' ? 'active' : ''}
-              onClick={() => setActiveSection(activeSection === 'experience' ? null : 'experience')}
-            >
-              {t('navigation.experience')}
-            </button>
-          </li>
+          {Object.values(navItems).map(({ section, label }) => (
+            <NavItem key={section} section={section} label={label} />
+          ))}
         </ul>
       </nav>
 
       {activeSection && (
-        <div className="content-card animate-slide-in-left-delayed">
-          {activeSection === 'about' && (
-            <div className="about-section">
-              <h2>{t('about.title')}</h2>
-              <p>{t('about.description')}</p>
-            </div>
-          )}
-          {activeSection === 'experience' && (
-            <div className="experience-section">
-              <h2>{t('experience.title')}</h2>
-              <p>{t('experience.description')}</p>
-            </div>
-          )}
+        <div className="content-card animate-slide-in-left">
+          {sectionComponents[activeSection]}
         </div>
       )}
     </>
   );
 };
 
-export default Navigation; 
+const Navigation = () => {
+  return (
+    <NavigationProvider>
+      <NavigationContent />
+    </NavigationProvider>
+  );
+};
+
+export default Navigation;
