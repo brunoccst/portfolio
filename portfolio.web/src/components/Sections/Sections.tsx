@@ -15,7 +15,7 @@ const Sections = () => {
   if (!activeSection) return null;
   
   return (
-    <div className="content-card animate-slide-in-left">
+    <div className="sections-card animate-slide-in-left">
       {sectionComponents[activeSection]}
     </div>
   );

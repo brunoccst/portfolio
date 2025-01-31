@@ -4,6 +4,7 @@
   --text-color-light: #1a1a1a;
   --text-color-secondary-light: rgba(26, 26, 26, 0.7);
   --card-bg-light: rgba(255, 255, 255, 0.9);
+  --card-bg-light-opaque: rgba(255, 255, 255, 1);
   --border-color-light: rgba(26, 26, 26, 0.3);
   
   // Dark theme colors
@@ -11,6 +12,7 @@
   --text-color-dark: #fff;
   --text-color-secondary-dark: rgba(255, 255, 255, 0.7);
   --card-bg-dark: rgba(30, 30, 30, 0.9);
+  --card-bg-dark-opaque: rgba(30, 30, 30, 1);
   --border-color-dark: rgba(255, 255, 255, 0.2);
   
   // Common variables
@@ -31,6 +33,7 @@
   --text-color: var(--text-color-light);
   --text-color-secondary: var(--text-color-secondary-light);
   --card-bg: var(--card-bg-light);
+  --settings-bg: var(--card-bg-light-opaque);
   --border-color: var(--border-color-light);
 }
 
@@ -39,5 +42,17 @@
   --text-color: var(--text-color-dark);
   --text-color-secondary: var(--text-color-secondary-dark);
   --card-bg: var(--card-bg-dark);
+  --settings-bg: var(--card-bg-dark-opaque);
   --border-color: var(--border-color-dark);
 } 
+
+@media (max-width: 768px) {
+  [data-theme='light'] {
+    --card-bg: var(--card-bg-light-opaque);
+    --settings-bg: var(--card-bg-light-opaque);
+  }
+  [data-theme='dark'] {
+    --card-bg: var(--card-bg-dark-opaque);
+    --settings-bg: var(--card-bg-dark-opaque);
+  } 
+}
