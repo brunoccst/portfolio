@@ -1,14 +1,15 @@
 import { createContext, useContext, ReactNode, useState } from 'react';
+import { SectionType } from '../components/Navigation/types';
 
 interface NavigationContextType {
-  activeSection: string | null;
-  setActiveSection: (section: string | null) => void;
+  activeSection: SectionType | null;
+  setActiveSection: (section: SectionType | null) => void;
 }
 
 const NavigationContext = createContext<NavigationContextType | undefined>(undefined);
 
 export const NavigationProvider = ({ children }: { children: ReactNode }) => {
-  const [activeSection, setActiveSection] = useState<string | null>(null);
+  const [activeSection, setActiveSection] = useState<SectionType | null>(null);
   
   return (
     <NavigationContext.Provider value={{ activeSection, setActiveSection }}>

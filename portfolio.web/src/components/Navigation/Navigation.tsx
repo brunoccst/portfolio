@@ -1,9 +1,10 @@
 import { NavigationProvider, useNavigation } from '../../contexts/NavigationContext';
+import { SectionType } from './types';
 import NavItem from './NavItem';
 import sectionComponents from './Sections';
 import './Navigation.scss';
 
-const navItems: Record<string, { section: string, label: string }> = {
+const navItems: Record<string, { section: SectionType, label: string }> = {
   about: { section: "about", label: "navigation.about" },
   experience: { section: "experience", label: "navigation.experience" }
 };

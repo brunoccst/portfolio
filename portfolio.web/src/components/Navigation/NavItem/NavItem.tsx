@@ -1,8 +1,9 @@
 import { useTranslation } from 'react-i18next';
 import { useNavigation } from '../../../contexts/NavigationContext';
+import { SectionType } from '../types';
 
 interface NavItemProps {
-  section: string;
+  section: SectionType;
   label: string;
 }
 
