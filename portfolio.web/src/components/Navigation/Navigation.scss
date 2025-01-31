@@ -48,14 +48,14 @@
 
 .content-card {
   position: absolute;
-  right: 40px;
   top: 80px;
-  width: 60%;
-  max-width: 600px;
+  right: 60px;
+  width: min(800px, 90%);
+  padding: clamp(20px, 4vw, 40px);
   background: var(--card-bg);
-  border-radius: var(--border-radius);
-  padding: 20px;
   border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
 
   h2 {
     margin: 0 0 20px;
@@ -67,6 +67,16 @@
     color: var(--text-color-secondary);
     line-height: 1.6;
     margin: 0;
+  }
+}
+
+@media (max-width: 1250px) {
+  .content-card {
+    top: 200px;
+    left: 20px;
+    right: 20px;
+    width: auto;
+    max-width: none;
   }
 }
 
