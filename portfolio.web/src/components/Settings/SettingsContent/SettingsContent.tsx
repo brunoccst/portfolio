@@ -14,7 +14,7 @@ const SettingsContent = () => {
   if (!isSettingsOpen) return null;
   
   return (
-    <div className="settings-content animate-slide-in-left-delayed">
+    <div className="settings-content animate-slide-in-left">
       <div className="settings-section">
         <label htmlFor="language">{t('settings.language')}</label>
         <select

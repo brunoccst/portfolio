@@ -1,5 +1,5 @@
 import { createContext, useContext, ReactNode, useState } from 'react';
-import { SectionType } from '../components/Navigation/types';
+import { SectionType } from '../types/sectionType';
 
 interface NavigationContextType {
   activeSection: SectionType | null;

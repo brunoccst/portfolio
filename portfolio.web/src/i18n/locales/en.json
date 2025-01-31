@@ -1,7 +1,7 @@
 {
   "about": {
     "title": "About Me",
-    "description": "I am a passionate software developer..."
+    "description": "Hey! 👋\nI'm a Team Lead at DocuWare, and a Software Engineer at heart.\n\nI believe in the power of teamwork and live by the motto: \"If I made someone's life better, then it was worth it.\"\nWhether it's a small feature or a complex project, I aim to ensure that everything we create makes a positive difference for both my colleagues and our customers.\n\nI'm learning the ways of leading a team. Leadership is something I always enjoyed, as it allows me to impact the team's success and support my colleagues in achieving their professional and personal goals.\n\nOn the Software Engineering side, I have the most fun in frontend development, particularly with React, but I have always worked with full stack development, mostly with C# (and .NET), Microsoft SQL, JavaScript, HTML, and CSS.\nOver the years, I've also gained experience with CI/CD, automated pipelines, Infrastructure as Code, Terraform and Microsoft Azure."
   },
   "skills": {
     "title": "Skills",
