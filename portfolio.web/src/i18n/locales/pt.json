@@ -1,7 +1,7 @@
 {
   "about": {
     "title": "Sobre Mim",
-    "description": "Sou um desenvolvedor apaixonado..."
+    "description": "Olá! 👋\nSou Team Lead na DocuWare e engenheiro de software de coração.\n\nAcredito no poder do trabalho em equipe e vivo pelo lema: \n<i>\"Se eu tornei a vida de alguém melhor, então valeu a pena.\"</i>\n\nSeja em uma pequena funcionalidade ou em um projeto complexo, busco garantir que tudo o que criamos faça uma diferença positiva para meus colegas e clientes.\n\nEstou aprendendo cada vez mais sobre liderança de equipes, algo que sempre gostei, pois me permite impactar o sucesso do time e apoiar meus colegas em seus objetivos profissionais e pessoais.\n\nNo lado técnico, me divirto mais com desenvolvimento frontend, especialmente com <b>React</b>, mas sempre atuei como full stack, principalmente com <b>C#</b> (e <b>.NET</b>), <b>Microsoft SQL</b>, <b>JavaScript</b>, <b>HTML</b> e <b>CSS</b>.\nAo longo dos anos, também adquiri experiência com CI/CD, pipelines automatizados, Infraestrutura como Código, Terraform e Microsoft Azure."
   },
   "skills": {
     "title": "Habilidades",
@@ -11,7 +11,64 @@
   },
   "experience": {
     "title": "Experiência",
-    "years": "{{years}} anos"
+    "years": "{{years}} anos",
+    "companies": [
+      {
+        "company": "DocuWare",
+        "roles": [
+          {
+            "title": "Team Lead",
+            "period": "Abr 2024 – Presente",
+            "description": "Líder da equipe de Client Solutions. Gerencio as atividades diárias de um time responsável por portais de autoatendimento para parceiros e clientes. Responsável por liderar e orientar o time, gerenciar onboarding, garantir alinhamento com os objetivos da empresa, resolver problemas, promover colaboração, gerenciar cargas de trabalho, garantir conformidade de políticas, reportar à gestão e ser exemplo positivo."
+          },
+          {
+            "title": "Engenheiro de Software",
+            "period": "Nov 2020 – Abr 2024",
+            "description": "Engenheiro de Software na equipe de Client Solutions. Mantive e desenvolvi soluções que suportam o ecossistema da empresa. Atuação focada em frontend, mas com stack variada: Backend (ASP.NET Core, C#, F#, SQL), Frontend (TypeScript, JavaScript, SCSS, HTML), Frameworks (React, StencilJS, Vaadin), Microsserviços, CI/CD, Terraform, Azure DevOps e mais."
+          }
+        ]
+      },
+      {
+        "company": "MECOMO AG",
+        "roles": [
+          {
+            "title": "Engenheiro de Software",
+            "period": "Nov 2019 – Nov 2020",
+            "description": "Após concluir a graduação, mudei-me para a Alemanha e atuei em diversos projetos, criando novas funcionalidades, mantendo código e dando suporte a diferentes departamentos. Utilizei tecnologias como ASP.NET MVC, C#, SQL, HTML, CSS, JavaScript, jQuery, Bootstrap, Microsoft TFS, Google Maps e mais."
+          },
+          {
+            "title": "Engenheiro de Software",
+            "period": "Dez 2018 – Nov 2019",
+            "description": "Retornei ao Brasil para concluir a graduação, mas continuei trabalhando remotamente em projetos para a MECOMO AG."
+          },
+          {
+            "title": "Engenheiro de Software",
+            "period": "Jan 2018 – Dez 2018",
+            "description": "Mudei-me para a Alemanha por um ano para ganhar experiência internacional, atuando em diversos projetos e tecnologias."
+          },
+          {
+            "title": "Júnior Engenheiro de Software",
+            "period": "Mai 2016 – Jan 2018",
+            "description": "Atuei na MECOMO do Brasil, subsidiária da MECOMO AG. Desenvolvedor full stack em aplicações web para telemetria e relatórios. Stack: ASP.NET MVC, C#, SQL, HTML, CSS, JavaScript, Web Forms, Windows Forms, jQuery, Bootstrap, Microsoft TFS, Google Maps, Bing Maps, OpenStreetMap, AG Grid. Experiência breve com Node.js."
+          }
+        ]
+      },
+      {
+        "company": "DBServer",
+        "roles": [
+          {
+            "title": "Engenheiro de Testes Automatizados",
+            "period": "Ago 2015 – Mai 2016",
+            "description": "Promovido para atuar em projetos da Dell Inc., desenvolvendo testes automatizados. Stack: ASP.NET e C#, Selenium WebDriver, Postman, SoapUI."
+          },
+          {
+            "title": "Estagiário",
+            "period": "Mar 2015 – Ago 2015",
+            "description": "Contribuí em projeto ágil para a GV Energy (hoje ENGIE), atuando em backend e frontend. Stack: ASP.NET MVC, Microsoft SQL Server, LINQ, HTML, CSS, JavaScript, Bootstrap, jQuery, FontAwesome, AmCharts, FullCalendar, Google Maps, OpenStreetMap."
+          }
+        ]
+      }
+    ]
   },
   "document": {
     "title": "Meu Portfólio"
