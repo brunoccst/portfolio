@@ -9,9 +9,6 @@
   border-radius: var(--border-radius);
   box-shadow: var(--shadow);
 
-  max-height: 80vh;
-  overflow-y: auto;
-
   h2 {
     margin: 0 0 20px;
     color: var(--text-color);
@@ -32,10 +29,23 @@
       justify-content: space-between;
       align-items: center;
       margin-bottom: 20px;
+      top: 0;
+      z-index: 2;
+      background: var(--card-bg);
+      padding-top: 8px;
+      padding-bottom: 8px;
+      /* Optional: add a subtle border or shadow for separation */
+      box-shadow: 0 2px 4px rgba(0,0,0,0.03);
 
       h2 {
         margin: 0;
       }
+    }
+
+    .section-content {
+      max-height: 60vh; 
+      overflow-y: auto;
+      padding-bottom: 8px;
     }
 
     .close-button {
@@ -84,5 +94,9 @@
     box-sizing: border-box;
     padding: 16px; // or clamp(12px, 4vw, 24px) for responsive padding
     overflow-y: auto;
+
+    .section-content {
+      max-height: 90vh !important; 
+    }
   }
 }

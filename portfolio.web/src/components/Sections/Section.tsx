@@ -22,7 +22,9 @@ const Section = ({ title, children }: SectionProps) => {
             <FiX />
           </button>
         </div>
-        {children}
+        <div className="section-content">
+          {children}
+        </div>
       </div>
     );
 };
