@@ -4,7 +4,8 @@ import './Navigation.scss';
 
 const navItems: Record<string, { section: SectionType; label: string }> = {
   about: { section: 'about', label: 'navigation.about' },
-  experience: { section: 'experience', label: 'navigation.experience' }
+  experience: { section: 'experience', label: 'navigation.experience' },
+  links: { section: 'links', label: 'Links' }
 };
 
 const Navigation = () => {
