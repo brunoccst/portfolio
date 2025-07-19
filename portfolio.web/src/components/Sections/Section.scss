@@ -9,6 +9,9 @@
   border-radius: var(--border-radius);
   box-shadow: var(--shadow);
 
+  max-height: 80vh;
+  overflow-y: auto;
+
   h2 {
     margin: 0 0 20px;
     color: var(--text-color);
@@ -65,15 +68,21 @@
     right: 20px;
     width: auto;
     max-width: none;
+    max-height: 70vh;
   }
 }
 
 @media (max-width: 768px) {
   .sections-card {
     position: fixed;
-    inset: 20px;
-    width: auto;
-    max-width: none;
+    inset: 0 0 0 0; // fills the viewport but stays within the container
+    width: 100vw;
+    max-width: 100vw;
+    max-height: 100dvh; // use dynamic viewport height for mobile
+    border-radius: 0;
     z-index: 11;
+    box-sizing: border-box;
+    padding: 16px; // or clamp(12px, 4vw, 24px) for responsive padding
+    overflow-y: auto;
   }
 }
