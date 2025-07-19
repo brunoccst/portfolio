@@ -12,21 +12,61 @@
   "experience": {
     "title": "Experience",
     "years": "{{years}} years",
-    "items": [
+    "companies": [
       {
         "company": "DocuWare",
-        "period": "2021 - Present",
-        "description": "Team Lead and Software Engineer. Led a team of developers, coordinated agile sprints, and contributed to the design and implementation of new features in our cloud document management platform."
+        "roles": [
+          {
+            "title": "Team Lead",
+            "period": "Apr 2024 – Present",
+            "description": "Team Lead of the Client Solutions Team. Manage daily activities of a key team developing self-service business portals for partners and direct customers. Responsibilities include leading and mentoring the team, managing onboarding, ensuring alignment with company goals, solving problems, promoting collaboration, managing workloads, ensuring policy compliance, reporting to management, and setting a positive example."
+          },
+          {
+            "title": "Software Engineer",
+            "period": "Nov 2020 – Apr 2024",
+            "description": "Software Engineer in the Client Solutions team. Maintained and developed solutions supporting the company's ecosystem. Focused on frontend development with a wide-ranging tech stack: Backend (ASP.NET Core, C#, F#, SQL), Frontend (TypeScript, JavaScript, SCSS, HTML), Frameworks (React, StencilJS, Vaadin), Microservices, CI/CD, Terraform, Azure DevOps, and more."
+          }
+        ]
       },
       {
-        "company": "Company B",
-        "period": "2018 - 2021",
-        "description": "Full Stack Developer. Built and maintained web applications using React and .NET, improved CI/CD pipelines, and mentored junior developers."
+        "company": "MECOMO AG",
+        "roles": [
+          {
+            "title": "Software Engineer",
+            "period": "Nov 2019 – Nov 2020",
+            "description": "Relocated to Germany after completing my bachelor's degree. Worked on various projects, creating new features, maintaining code, and providing support for different departments. Utilized technologies such as ASP.NET MVC, C#, SQL, HTML, CSS, JavaScript, jQuery, Bootstrap, Microsoft TFS, Google Maps, and more."
+          },
+          {
+            "title": "Software Engineer",
+            "period": "Dec 2018 – Nov 2019",
+            "description": "Returned to Brazil to complete my bachelor's degree, continued working on projects for MECOMO AG remotely."
+          },
+          {
+            "title": "Software Engineer",
+            "period": "Jan 2018 – Dec 2018",
+            "description": "Moved to Germany for a year to gain international experience, working on a variety of projects and technologies."
+          },
+          {
+            "title": "Junior Software Engineer",
+            "period": "May 2016 – Jan 2018",
+            "description": "Joined MECOMO do Brasil, the Brazilian subsidiary of MECOMO AG. Worked as a full stack developer on web applications for telemetry information and reporting. Tech stack: ASP.NET MVC, C#, SQL, HTML, CSS, JavaScript, Web Forms, Windows Forms, jQuery, Bootstrap, Microsoft TFS, Google Maps, Bing Maps, OpenStreetMap, AG Grid. Briefly explored Node.js for a specific project."
+          }
+        ]
       },
       {
-        "company": "Company C",
-        "period": "2015 - 2018",
-        "description": "Software Engineer. Developed backend services, optimized SQL databases, and collaborated with cross-functional teams to deliver high-quality software."
+        "company": "DBServer",
+        "roles": [
+          {
+            "title": "Test Automation Engineer",
+            "period": "Aug 2015 – May 2016",
+            "description": "Promoted to this role and worked on projects for Dell Inc., developing automated tests. Tech stack: ASP.NET and C#, Selenium WebDriver, Postman, SoapUI."
+          },
+          {
+            "title": "Intern",
+            "period": "Mar 2015 – Aug 2015",
+            "description": "Contributed to an agile project for GV Energy (now ENGIE), working on both backend and frontend development. Tech stack: ASP.NET MVC, Microsoft SQL Server, LINQ, HTML, CSS, JavaScript, Bootstrap, jQuery, FontAwesome, AmCharts, FullCalendar, Google Maps, OpenStreetMap."
+          }
+        ]
       }
     ]
   },

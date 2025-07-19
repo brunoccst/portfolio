@@ -1,24 +1,25 @@
 import { useTranslation } from "react-i18next";
 import Section from "../Section";
-import ExperienceItem from "./ExperienceItem/ExperienceItem";
+import CompanyExperience from "./CompanyExperience";
 
 const Experience = () => {
     const { t } = useTranslation();
-    
-    const experiences = t("experience.items", { returnObjects: true }) as Array<{
+    const companies = t("experience.companies", { returnObjects: true }) as Array<{
         company: string;
-        period: string;
-        description: string;
+        roles: Array<{
+            title: string;
+            period: string;
+            description: string;
+        }>;
     }>;
 
     return (
         <Section title={t("experience.title")}>
-            {experiences.map((exp, idx) => (
-                <ExperienceItem
-                    key={exp.company + exp.period + idx}
-                    company={exp.company}
-                    period={exp.period}
-                    description={exp.description}
+            {companies.map((comp, idx) => (
+                <CompanyExperience
+                    key={comp.company + idx}
+                    company={comp.company}
+                    roles={comp.roles}
                 />
             ))}
         </Section>
