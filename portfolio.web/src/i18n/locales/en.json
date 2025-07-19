@@ -30,8 +30,8 @@
       }
     ]
   },
-  "brand": {
-    "name": "My Portfolio"
+  "document": {
+    "title": "My Portfolio"
   },
   "role": {
     "title": "Software Engineer & Team Lead"

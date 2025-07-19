@@ -13,8 +13,8 @@
     "title": "Experiência",
     "years": "{{years}} anos"
   },
-  "brand": {
-    "name": "Meu Portfólio"
+  "document": {
+    "title": "Meu Portfólio"
   },
   "role": {
     "title": "Engenheiro de Software & Líder de Equipe"
