@@ -71,6 +71,28 @@
   }
 }
 
+.sections-card,
+.section-content {
+  scrollbar-width: thin;              // For Firefox
+  scrollbar-color: var(--border-color) transparent; // For Firefox
+
+  &::-webkit-scrollbar {
+    width: 8px;                       // Thin scrollbar
+    background: transparent;          // No track background
+  }
+  &::-webkit-scrollbar-thumb {
+    background: var(--border-color);  // Thumb color
+    border-radius: 8px;
+    transition: background 0.2s;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: var(--text-color-secondary); // Thumb color on hover
+  }
+  &::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+}
+
 @media (max-width: 1250px) {
   .sections-card {
     top: 200px;
