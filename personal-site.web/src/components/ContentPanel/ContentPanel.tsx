@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type RefObject } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState, type RefObject } from 'react';
 import { useLocation, useOutlet } from 'react-router-dom';
 
 import { findSectionByPath, indexOfSection } from '../../config/sections';
@@ -29,14 +29,17 @@ export function ContentPanel({ panelRef, label }: ContentPanelProps) {
 
   // Holds the newest route element without triggering the swap effect.
   const latestOutlet = useRef(outlet);
-  latestOutlet.current = outlet;
+  useLayoutEffect(() => {
+    latestOutlet.current = outlet;
+  });
 
   const [displayed, setDisplayed] = useState<DisplayedRoute>(() => ({
     pathname,
     node: outlet,
     direction: 1,
   }));
-  const [phase, setPhase] = useState<'enter' | 'exit'>('enter');
+  // The old section plays its leaving animation until the new one replaces it.
+  const phase = displayed.pathname === pathname ? 'enter' : 'exit';
 
   useEffect(() => {
     if (displayed.pathname === pathname) return;
@@ -45,10 +48,8 @@ export function ContentPanel({ panelRef, label }: ContentPanelProps) {
     const to = indexOfSection(findSectionByPath(pathname).id);
     const direction = to >= from ? 1 : -1;
 
-    setPhase('exit');
     const timer = window.setTimeout(() => {
       setDisplayed({ pathname, node: latestOutlet.current, direction });
-      setPhase('enter');
       panelRef.current?.scrollTo({ top: 0 });
     }, EXIT_DURATION_MS);
 
@@ -62,6 +63,8 @@ export function ContentPanel({ panelRef, label }: ContentPanelProps) {
       className={styles.panel}
       role="region"
       aria-label={label}
+      // Scrollable regions need a tab stop so keyboard users can scroll them.
+      // oxlint-disable-next-line jsx-a11y/no-noninteractive-tabindex
       tabIndex={0}
     >
       <div

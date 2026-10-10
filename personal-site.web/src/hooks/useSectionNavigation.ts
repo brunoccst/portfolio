@@ -1,4 +1,4 @@
-import { useEffect, useRef, type RefObject } from 'react';
+import { useEffect, useLayoutEffect, useRef, type RefObject } from 'react';
 
 // Wheel distance that must build up before the section changes.
 const WHEEL_THRESHOLD = 60;
@@ -56,7 +56,9 @@ export function useSectionNavigation({
 
   // Latest values are kept in a ref so the listeners are attached only once.
   const state = useRef({ currentIndex, count, onRequestSection, enabled });
-  state.current = { currentIndex, count, onRequestSection, enabled };
+  useLayoutEffect(() => {
+    state.current = { currentIndex, count, onRequestSection, enabled };
+  });
 
   useEffect(() => {
     // Requests the section `step` places away, respecting the input lock.
