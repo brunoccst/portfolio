@@ -24,6 +24,7 @@
   },
   "a11y": {
     "skipToContent": "Ir para o conteúdo",
+    "skipIntro": "Pular introdução",
     "opensInNewTab": "(abre em uma nova aba)",
     "sectionAnnouncement": "Seção {{section}}"
   },
