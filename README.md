@@ -57,6 +57,7 @@ personal-site/
 ├── .github/workflows/    CI: checks and build on every pull request
 ├── docs/                 Written notes about the project
 │   ├── DECISIONS.md      Why the project is built this way
+│   ├── GOOGLE-SEARCH.md  How to get the site into Google Search
 │   ├── KNOWN-ISSUES.md   Things that are wrong or incomplete
 │   └── NEXT-STEPS.md     Planned work
 ├── netlify.toml          Build and hosting settings for Netlify
@@ -365,6 +366,8 @@ Pushing to `main` triggers a deploy.
 ## Further reading
 
 - [docs/DECISIONS.md](docs/DECISIONS.md)
+- [docs/GOOGLE-SEARCH.md](docs/GOOGLE-SEARCH.md): how to get the site into
+  Google Search, written for someone who does not program
 - [docs/KNOWN-ISSUES.md](docs/KNOWN-ISSUES.md)
 - [docs/NEXT-STEPS.md](docs/NEXT-STEPS.md)
 
