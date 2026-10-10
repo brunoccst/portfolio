@@ -43,24 +43,14 @@ Once the content is known:
 
 ## 3. Metadata and sharing
 
-- Add Open Graph and Twitter Card tags to `index.html`.
-- Add a 1200×630 preview image to `public/`.
-- Add `public/sitemap.xml` and reference it from `robots.txt`.
-- Add a `<link rel="canonical">`.
-- Add JSON-LD `Person` structured data.
+Open Graph and Twitter Card tags, the preview image, the sitemap, the canonical
+link and JSON-LD `Person` data are all in place. One question remains:
+
 - Decide whether the `lang` attribute switching needs matching `hreflang`
   alternates. It probably does not while both languages share one URL, but a
   crawler only ever sees the default language, which is worth revisiting.
 
-## 4. Quality tooling
-
-- Add ESLint with `typescript-eslint`, `eslint-plugin-react-hooks` and
-  `eslint-plugin-jsx-a11y`. The last one would have caught several things during
-  the rewrite.
-- Add Prettier and a `format` script.
-- Add a `lint` script and make CI run `typecheck`, `lint` and `build`.
-
-## 5. Tests
+## 4. Tests
 
 - Add Vitest and Testing Library.
 - Cover `useSectionNavigation` first: the panel-priority rule, the 60px
@@ -73,7 +63,7 @@ Once the content is known:
   intro playing through to the page, deep-linking to `/experience`, and a wheel
   gesture changing section.
 
-## 6. Performance
+## 5. Performance
 
 - Measure first. Run Lighthouse against the deployed site and record the
   numbers before changing anything.
@@ -87,34 +77,24 @@ Once the content is known:
   no-JavaScript visitors get real HTML. `vite-plugin-prerender` or a small
   post-build script would do it without adopting a framework.
 
-## 7. Accessibility follow-ups
+## 6. Accessibility follow-ups
 
 - Run axe against all three sections in both themes and both languages.
 - Test the whole page with a screen reader, particularly the section-change
   announcement and the intro.
 - Make the content panel focusable only when it actually scrolls, by measuring
   overflow with a `ResizeObserver`.
-- Offer a static version of the intro under reduced motion instead of removing
-  it.
 - Add `prefers-contrast: more` overrides that raise the border and muted-text
   tokens.
-- Tell people that scrolling moves between sections. The on-screen hint has been
-  removed, so the behaviour is now undiscoverable for everyone rather than just
-  for screen reader users. An accessible description on the navigation, or a
-  quieter visual cue, would cover both.
-- Reconsider whether the intro should be skippable. It is four seconds on every
-  full page load with no way out.
 
-## 8. Internationalisation follow-ups
+## 7. Internationalisation follow-ups
 
-- Add a script that compares the key sets of `en.json` and `pt.json` and fails
-  the build when they diverge.
 - Decide whether Portuguese should be split into `pt-BR` and `pt-PT`.
 - Replace the two-language toggle with a menu if a third language is added.
 - Consider giving each language its own URL prefix so a shared link keeps its
   language.
 
-## 9. Interaction polish
+## 8. Interaction polish
 
 - Reconsider whether scroll-driven section changes should push history entries.
 - Add horizontal-travel rejection to the touch handler so diagonal swipes do not
@@ -122,7 +102,7 @@ Once the content is known:
 - Add a progress indicator showing position within the section list, for
   visitors who do not read the navigation as a progress bar.
 
-## 10. Analytics
+## 9. Analytics
 
 If any measurement is wanted, use something cookie-free and self-hostable such
 as Plausible or Umami, so no consent banner is needed. Decide first what
