@@ -32,6 +32,9 @@
     "opensInNewTab": "(abre em uma nova aba)",
     "sectionAnnouncement": "Seção {{section}}"
   },
+  "timeline": {
+    "present": "Atual"
+  },
   "sections": {
     "about": {
       "title": "Sobre mim",
@@ -44,101 +47,7 @@
       ]
     },
     "experience": {
-      "title": "Experiência",
-      "kicker": "2014 — presente",
-      "items": [
-        {
-          "period": "Abr 2024 — Atual",
-          "role": "Líder de Equipe",
-          "organisation": "DocuWare",
-          "location": "Alemanha",
-          "summary": "Lidero o time de Client Solutions, responsável pelos portais self-service usados pelos parceiros e clientes diretos da DocuWare. Cuido para que os projetos andem e que o time tenha suporte: mentoria, contratação e onboarding, equilíbrio da carga de trabalho, alinhamento entre product owners, desenvolvimento e operações, e sou o primeiro ponto de contato quando algo precisa ser escalado. Ainda escrevo código em cerca de um quinto do meu tempo.",
-          "stack": [
-            "Liderança de equipe",
-            "Mentoria",
-            "Contratação & onboarding",
-            "Scrum",
-            "Alinhamento com stakeholders",
-            "React",
-            "TypeScript",
-            "ASP.NET Core"
-          ]
-        },
-        {
-          "period": "Nov 2020 — Abr 2024",
-          "role": "Engenheiro de Software",
-          "organisation": "DocuWare",
-          "location": "Alemanha",
-          "summary": "Engenheiro full-stack com foco em front-end no time de Client Solutions, responsável pelas soluções que sustentam o ecossistema da empresa. Contribuí em vários projetos escaláveis, do banco de dados até a interface.",
-          "stack": [
-            "ASP.NET Core",
-            "C#",
-            "F#",
-            "SQL",
-            "TypeScript",
-            "JavaScript",
-            "SCSS",
-            "React",
-            "StencilJS",
-            "Vaadin",
-            "Microsserviços",
-            "CI/CD",
-            "Terraform",
-            "Azure DevOps"
-          ]
-        },
-        {
-          "period": "Mai 2016 — Nov 2020",
-          "role": "Engenheiro de Software",
-          "organisation": "MECOMO AG",
-          "location": "Brasil & Alemanha",
-          "summary": "Entrei na MECOM do Brasil, subsidiária brasileira do grupo, como engenheiro júnior e evoluí para uma função full-stack na plataforma de telemetria — uma aplicação web de monitoramento de dados ao vivo e geração de relatórios. Desenvolvi novas funcionalidades, mantive o código existente e atendi demandas de várias áreas, trabalhando ora no escritório brasileiro, ora na sede alemã.",
-          "stack": [
-            "ASP.NET Framework",
-            "ASP.NET MVC",
-            "C#",
-            "Microsoft SQL Server",
-            "JavaScript",
-            "jQuery",
-            "Bootstrap",
-            "Web Forms",
-            "Team Foundation Server"
-          ]
-        },
-        {
-          "period": "Mar 2015 — Mai 2016",
-          "role": "Engenheiro de Software, Testes Automatizados",
-          "organisation": "DB Server — alocado na Dell",
-          "location": "Brasil",
-          "summary": "Entrei como estagiário e depois fui promovido a engenheiro de software. Atuei em três projetos de outsourcing para a Dell, responsável por desenvolver os testes automatizados.",
-          "stack": [
-            "C#",
-            "ASP.NET",
-            "Selenium WebDriver",
-            "Postman",
-            "SoapUI",
-            "Team Foundation Server"
-          ]
-        },
-        {
-          "period": "Set 2014 — Mar 2015",
-          "role": "Estágio em Engenharia de Software",
-          "organisation": "Microsoft Innovation Center & DB Server",
-          "location": "Brasil",
-          "summary": "Onde minha carreira começou, em um programa de aceleração promovido pelo Microsoft Innovation Center e pela DB Server. Desenvolvi o sistema que a DB Server usava para divulgar suas vagas e receber currículos, e tive meu primeiro contato com desenvolvimento web e métodos ágeis.",
-          "stack": [
-            "ASP.NET MVC",
-            "C#",
-            "Entity Framework",
-            "Visual Studio",
-            "JavaScript",
-            "jQuery",
-            "Bootstrap",
-            "Scrum",
-            "Kanban"
-          ]
-        }
-      ]
+      "title": "Experiência"
     },
     "links": {
       "title": "Links",

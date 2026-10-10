@@ -1,0 +1,112 @@
+import type { TimelineEntry } from './timeline';
+
+// The entries of the experience section. Order does not matter: the page lists
+// them newest first. See `timeline.ts` for what each field means.
+export const experience: TimelineEntry[] = [
+  {
+    start: '2024-04',
+    role: { en: 'Team Lead', pt: 'Líder de Equipe' },
+    organisation: 'DocuWare',
+    location: { en: 'Germany', pt: 'Alemanha' },
+    summary: {
+      en: "I lead the Client Solutions team, which builds the self-service business portals used by DocuWare's partners and direct customers. I keep projects moving and the team supported: mentoring, hiring and onboarding, balancing workloads, keeping product owners, developers and operations aligned, and taking the first call when something needs escalating. I still write code for about a fifth of my time.",
+      pt: 'Lidero o time de Client Solutions, responsável pelos portais self-service usados pelos parceiros e clientes diretos da DocuWare. Cuido para que os projetos andem e que o time tenha suporte: mentoria, contratação e onboarding, equilíbrio da carga de trabalho, alinhamento entre product owners, desenvolvimento e operações, e sou o primeiro ponto de contato quando algo precisa ser escalado. Ainda escrevo código em cerca de um quinto do meu tempo.',
+    },
+    stack: [
+      { en: 'Team leadership', pt: 'Liderança de equipe' },
+      { en: 'Mentoring', pt: 'Mentoria' },
+      { en: 'Hiring & onboarding', pt: 'Contratação & onboarding' },
+      'Scrum',
+      { en: 'Stakeholder alignment', pt: 'Alinhamento com stakeholders' },
+      'React',
+      'TypeScript',
+      'ASP.NET Core',
+    ],
+  },
+  {
+    start: '2020-11',
+    end: '2024-04',
+    role: { en: 'Software Engineer', pt: 'Engenheiro de Software' },
+    organisation: 'DocuWare',
+    location: { en: 'Germany', pt: 'Alemanha' },
+    summary: {
+      en: "Full-stack engineer with a focus on the front end, on the Client Solutions team — the range of solutions that support the company's ecosystem. I contributed to several scalable projects, from the database through to the interface.",
+      pt: 'Engenheiro full-stack com foco em front-end no time de Client Solutions, responsável pelas soluções que sustentam o ecossistema da empresa. Contribuí em vários projetos escaláveis, do banco de dados até a interface.',
+    },
+    stack: [
+      'ASP.NET Core',
+      'C#',
+      'F#',
+      'SQL',
+      'TypeScript',
+      'JavaScript',
+      'SCSS',
+      'React',
+      'StencilJS',
+      'Vaadin',
+      { en: 'Microservices', pt: 'Microsserviços' },
+      'CI/CD',
+      'Terraform',
+      'Azure DevOps',
+    ],
+  },
+  {
+    start: '2016-05',
+    end: '2020-11',
+    role: { en: 'Software Engineer', pt: 'Engenheiro de Software' },
+    organisation: 'MECOMO AG',
+    location: { en: 'Brazil & Germany', pt: 'Brasil & Alemanha' },
+    summary: {
+      en: "I joined MECOM do Brasil, the group's Brazilian subsidiary, as a junior engineer and grew into a full-stack role on its telemetry platform — a web application for live data monitoring and report generation. I built new features, maintained existing code and handled requests from across the business, working from the Brazilian office and the German headquarters in turn.",
+      pt: 'Entrei na MECOM do Brasil, subsidiária brasileira do grupo, como engenheiro júnior e evoluí para uma função full-stack na plataforma de telemetria — uma aplicação web de monitoramento de dados ao vivo e geração de relatórios. Desenvolvi novas funcionalidades, mantive o código existente e atendi demandas de várias áreas, trabalhando ora no escritório brasileiro, ora na sede alemã.',
+    },
+    stack: [
+      'ASP.NET Framework',
+      'ASP.NET MVC',
+      'C#',
+      'Microsoft SQL Server',
+      'JavaScript',
+      'jQuery',
+      'Bootstrap',
+      'Web Forms',
+      'Team Foundation Server',
+    ],
+  },
+  {
+    start: '2015-03',
+    end: '2016-05',
+    role: {
+      en: 'Software Engineer, Automated Tests',
+      pt: 'Engenheiro de Software, Testes Automatizados',
+    },
+    organisation: { en: 'DB Server — outsourced for Dell', pt: 'DB Server — alocado na Dell' },
+    location: { en: 'Brazil', pt: 'Brasil' },
+    summary: {
+      en: 'Joined as an intern and was later promoted to software engineer. I worked on three outsourcing projects for Dell, responsible for developing their automated tests.',
+      pt: 'Entrei como estagiário e depois fui promovido a engenheiro de software. Atuei em três projetos de outsourcing para a Dell, responsável por desenvolver os testes automatizados.',
+    },
+    stack: ['C#', 'ASP.NET', 'Selenium WebDriver', 'Postman', 'SoapUI', 'Team Foundation Server'],
+  },
+  {
+    start: '2014-09',
+    end: '2015-03',
+    role: { en: 'Software Engineering Intern', pt: 'Estágio em Engenharia de Software' },
+    organisation: 'Microsoft Innovation Center & DB Server',
+    location: { en: 'Brazil', pt: 'Brasil' },
+    summary: {
+      en: 'Where my career started, on an acceleration programme run by the Microsoft Innovation Center and DB Server. I built the system DB Server used to publish its open positions and receive applications, and had my first contact with web development and agile practices.',
+      pt: 'Onde minha carreira começou, em um programa de aceleração promovido pelo Microsoft Innovation Center e pela DB Server. Desenvolvi o sistema que a DB Server usava para divulgar suas vagas e receber currículos, e tive meu primeiro contato com desenvolvimento web e métodos ágeis.',
+    },
+    stack: [
+      'ASP.NET MVC',
+      'C#',
+      'Entity Framework',
+      'Visual Studio',
+      'JavaScript',
+      'jQuery',
+      'Bootstrap',
+      'Scrum',
+      'Kanban',
+    ],
+  },
+];
