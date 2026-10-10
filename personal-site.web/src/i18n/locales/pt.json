@@ -10,6 +10,10 @@
   },
   "nav": {
     "label": "Seções do site",
+    "hint": {
+      "pointer": "Role a página, ou use as setas do teclado, para mudar de seção.",
+      "touch": "Deslize para cima ou para baixo para mudar de seção."
+    },
     "about": "Sobre mim",
     "experience": "Experiência",
     "links": "Links"
@@ -24,6 +28,7 @@
   },
   "a11y": {
     "skipToContent": "Ir para o conteúdo",
+    "skipIntro": "Pular introdução",
     "opensInNewTab": "(abre em uma nova aba)",
     "sectionAnnouncement": "Seção {{section}}"
   },

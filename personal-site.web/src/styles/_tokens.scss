@@ -45,10 +45,12 @@
   --radius-lg: clamp(0.75rem, 1.2vmin, 1.25rem);
 
   // --- Type ---
-  --font-sans: 'Segoe UI Variable Display', 'Segoe UI', ui-sans-serif, system-ui,
-    -apple-system, Roboto, 'Helvetica Neue', Arial, sans-serif;
-  --font-mono: ui-monospace, 'Cascadia Mono', 'Segoe UI Mono', 'SF Mono',
-    Consolas, 'Liberation Mono', monospace;
+  --font-sans:
+    'Segoe UI Variable Display', 'Segoe UI', ui-sans-serif, system-ui, -apple-system, Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  --font-mono:
+    ui-monospace, 'Cascadia Mono', 'Segoe UI Mono', 'SF Mono', Consolas, 'Liberation Mono',
+    monospace;
 
   --text-xs: clamp(0.6875rem, 0.66rem + 0.14vw, 0.75rem);
   --text-sm: clamp(0.8125rem, 0.78rem + 0.16vw, 0.875rem);

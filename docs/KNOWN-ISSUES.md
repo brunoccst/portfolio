@@ -103,11 +103,6 @@ and two tooltips. That is most of the third-party JavaScript on the page.
 The trade was made knowingly — see [DECISIONS.md](DECISIONS.md) — but it is the
 single largest performance cost in the project.
 
-### No linter or formatter
-
-There is no ESLint or Prettier configuration. Style is consistent because the
-code was written in one pass, and nothing enforces it.
-
 ### No tests
 
 There are no unit, component or end-to-end tests. `useSectionNavigation` and the
@@ -123,11 +118,6 @@ regression would be easy to introduce and hard to notice.
 `pt-BR` and `pt-PT` both resolve to `pt`, and the Portuguese file uses Brazilian
 spelling and vocabulary ("Líder de Equipe & Engenheiro de Software"). A visitor
 in Portugal gets Brazilian Portuguese.
-
-### Nothing checks that the two locale files match
-
-A key added to `en.json` and forgotten in `pt.json` produces no error. It falls
-back to English silently, so a half-translated interface would ship unnoticed.
 
 ### The language toggle assumes exactly two languages
 
@@ -200,23 +190,6 @@ consistently.
 with the keyboard. When the section is short enough not to scroll, that is a tab
 stop that does nothing.
 
-### Nothing tells anyone that scrolling changes section
-
-The on-screen hint that used to say so has been removed. The wheel, arrow keys
-and swipes all still change section, and the side navigation is the only clue
-that more sections exist. Nobody is told how to reach them without clicking.
-
-### The intro cannot be skipped
-
-The skip button and the <kbd>Esc</kbd> handler are gone, so every visitor waits
-about four and a half seconds before the content appears, on every full page
-load. Only the reduced-motion preference bypasses it.
-
-### Reduced motion removes the intro rather than simplifying it
-
-Someone who asks for reduced motion never sees the opening text at all. A static
-version held briefly would carry the same information without movement.
-
 ---
 
 ## Hosting
@@ -226,11 +199,6 @@ version held briefly would carry the same information without movement.
 `/experience` only resolves because of the catch-all rule in `netlify.toml`.
 Opening `dist/index.html` from the filesystem, or serving `dist` with a static
 server that has no SPA fallback, gives a 404 on every path except `/`.
-
-### No social preview or sitemap
-
-`index.html` has a description but no Open Graph or Twitter Card tags, so a
-shared link renders as a bare URL. There is no `sitemap.xml`.
 
 ### Client-side rendering only
 

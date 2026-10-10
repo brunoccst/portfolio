@@ -4,9 +4,7 @@ const QUERY = '(prefers-reduced-motion: reduce)';
 
 // Tracks the operating system "reduce motion" accessibility setting.
 export function usePrefersReducedMotion(): boolean {
-  const [prefersReduced, setPrefersReduced] = useState(
-    () => window.matchMedia(QUERY).matches,
-  );
+  const [prefersReduced, setPrefersReduced] = useState(() => window.matchMedia(QUERY).matches);
 
   useEffect(() => {
     const mediaQuery = window.matchMedia(QUERY);

@@ -13,6 +13,9 @@ $words-exit-duration: 900ms;
 // The intro stays mounted until the separator has faded out behind the words.
 $exit-duration: $words-exit-duration + $separator-duration;
 
+// Quick fade of the whole intro after a skip, matching `SKIP_DURATION_MS`.
+$skip-duration: 300ms;
+
 // Space between each half and the separator.
 $gap: 0.45em;
 // How far each mask reaches past its own box towards the separator. It spans
@@ -41,10 +44,48 @@ $reach-neg: -$reach;
   background-repeat: no-repeat;
   overflow: hidden;
 
-  &[data-phase='exit'] {
+  // Clicking anywhere skips the intro.
+  cursor: pointer;
+
+  &[data-phase='exit'],
+  &[data-phase='skip'] {
     // The page underneath is already fading in, so it takes the clicks.
     pointer-events: none;
+  }
+
+  &[data-phase='exit'] {
     animation: backdrop-out $exit-duration linear forwards;
+  }
+
+  &[data-phase='skip'] {
+    animation: fade-out $skip-duration ease-out forwards;
+  }
+}
+
+// Quiet text button near the bottom edge; the visible route to skipping.
+.skip {
+  position: absolute;
+  bottom: var(--space-6);
+  left: 50%;
+  translate: -50% 0;
+  padding: var(--space-2) var(--space-3);
+  border: 0;
+  border-radius: var(--radius-md);
+  background: none;
+  color: var(--color-text-muted);
+  font: inherit;
+  font-size: var(--text-sm);
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  opacity: 0;
+  animation: separator-in $separator-duration linear $enter-delay forwards;
+
+  &:hover {
+    color: var(--color-text);
+  }
+
+  .intro:not([data-phase='enter']) & {
+    visibility: hidden;
   }
 }
 
@@ -124,7 +165,9 @@ $reach-neg: -$reach;
 
 // --- Entering: the separator draws first, then both halves slide out of it ---
 
-.intro[data-phase='enter'] {
+// A skip keeps the entering animations running so the line fades out from
+// wherever it had got to, rather than snapping back to hidden.
+.intro:is([data-phase='enter'], [data-phase='skip']) {
   .name {
     animation: name-in $enter-duration v.$ease-out $enter-delay forwards;
   }
@@ -225,6 +268,15 @@ $reach-neg: -$reach;
 }
 
 @keyframes separator-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-out {
   from {
     opacity: 1;
   }

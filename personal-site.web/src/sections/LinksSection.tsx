@@ -37,9 +37,7 @@ export default function LinksSection() {
               >
                 <span className={styles.linkLabel}>
                   {item.label}
-                  {external && (
-                    <span className="visually-hidden"> {t('a11y.opensInNewTab')}</span>
-                  )}
+                  {external && <span className="visually-hidden"> {t('a11y.opensInNewTab')}</span>}
                 </span>
                 <span className={styles.linkDescription}>{item.description}</span>
               </a>

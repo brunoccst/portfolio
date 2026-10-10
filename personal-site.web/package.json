@@ -5,9 +5,14 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "npm run check:locales && tsc -b && vite build",
     "preview": "vite preview",
-    "typecheck": "tsc -b --noEmit"
+    "typecheck": "tsc -b --noEmit",
+    "lint": "oxlint --deny-warnings src vite.config.ts",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "check:locales": "node scripts/check-locales.mjs",
+    "check": "npm run typecheck && npm run lint && npm run format:check && npm run check:locales"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -25,6 +30,8 @@
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.7",
     "@vitejs/plugin-react": "^6.1.1",
+    "oxlint": "^1.87.0",
+    "prettier": "^3.9.10",
     "sass": "^1.104.0",
     "typescript": "^7.0.2",
     "vite": "^8.2.2"

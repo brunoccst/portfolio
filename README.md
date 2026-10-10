@@ -37,14 +37,23 @@ All scripts run from the `personal-site.web` folder.
 | Script | What it does |
 | --- | --- |
 | `npm run dev` | Starts the development server with hot reload. |
-| `npm run build` | Type-checks the code, then writes the production files to `personal-site.web/dist`. |
+| `npm run build` | Checks the locale files, type-checks the code, then writes the production files to `personal-site.web/dist`. |
 | `npm run preview` | Serves the contents of `dist` so you can check the production build. |
 | `npm run typecheck` | Runs the TypeScript compiler without producing files. |
+| `npm run lint` | Runs oxlint, including the React hooks and accessibility rules. Fails on any warning. |
+| `npm run format` | Rewrites every file with Prettier. |
+| `npm run format:check` | Reports files Prettier would change, without changing them. |
+| `npm run check:locales` | Fails when `en.json` and `pt.json` do not have the same keys. |
+| `npm run check` | Runs typecheck, lint, format check and the locale check in turn. |
+
+Run `npm run check` before pushing. CI runs the same checks and the build on
+every pull request; see `.github/workflows/ci.yml`.
 
 ## Repository layout
 
 ```
 personal-site/
+├── .github/workflows/    CI: checks and build on every pull request
 ├── docs/                 Written notes about the project
 │   ├── DECISIONS.md      Why the project is built this way
 │   ├── KNOWN-ISSUES.md   Things that are wrong or incomplete
@@ -59,6 +68,7 @@ personal-site/
 personal-site.web/
 ├── index.html            Page shell; loads src/main.tsx
 ├── public/               Files copied to the site root as-is
+├── scripts/              Build-time checks, such as the locale key check
 ├── vite.config.ts        Build tool configuration
 ├── tsconfig*.json        TypeScript configuration
 └── src/
@@ -84,6 +94,8 @@ personal-site.web/
 | [i18next](https://www.i18next.com/) + react-i18next | Loading text from locale files. |
 | [Material UI](https://mui.com/) | The icon buttons and tooltips in the top-right corner. |
 | [Sass](https://sass-lang.com/) | Writing the styles as SCSS. |
+| [oxlint](https://oxc.rs/docs/guide/usage/linter) | Linting, including React hooks and jsx-a11y rules. |
+| [Prettier](https://prettier.io/) | Formatting. |
 
 ## How the page works
 
@@ -124,8 +136,10 @@ rather than over it.
    the two cross-fade.
 3. `done` — the intro is removed from the React tree.
 
-The intro runs for about four and a half seconds and cannot be skipped. It is
-dropped entirely when the operating system asks for reduced motion.
+The intro runs for about four and a half seconds. Clicking or tapping anywhere,
+pressing <kbd>Esc</kbd>, <kbd>Enter</kbd> or <kbd>Space</kbd>, or using the
+"Skip intro" button fades it out at once. When the operating system asks for
+reduced motion, the finished line is shown still for 1.5 seconds instead.
 
 ### Moving between sections
 
@@ -148,6 +162,9 @@ Inputs the hook understands:
 
 After a change, further input is ignored for 700ms so one long gesture does not
 skip several sections.
+
+A short line under the side navigation tells visitors this. It reads "Swipe up
+or down" on touch screens and mentions the wheel and arrow keys elsewhere.
 
 ### Routing
 
@@ -255,8 +272,8 @@ const paragraphs = useTranslatedList<string>('sections.about.paragraphs');
 2. Add the same key to `pt.json`.
 3. Read it with `t('your.key')`.
 
-Keep the two files in the same shape. A key that exists in only one file falls
-back to English at runtime.
+Keep the two files in the same shape. `npm run check:locales` fails, and so does
+the build, when a key exists in only one file.
 
 ## Adding a section
 
@@ -284,7 +301,10 @@ array, so nothing else needs changing.
 - A hidden live region announces the section name after every change, and the
   document title is updated to match.
 - Every animation is switched off when the operating system asks for reduced
-  motion, and the intro is skipped entirely.
+  motion, and the intro is shown as a still line for 1.5 seconds.
+- The intro can be skipped with a button, a click anywhere, or the keyboard.
+- The side navigation is described by a line saying that scrolling, the arrow
+  keys or a swipe change the section.
 - Focus is drawn with a two-pixel outline in the accent colour.
 - Text colours meet WCAG AA contrast against their backgrounds. The measured
   ratios are listed in [docs/DECISIONS.md](docs/DECISIONS.md).

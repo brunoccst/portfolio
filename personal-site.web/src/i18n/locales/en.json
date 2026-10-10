@@ -10,6 +10,10 @@
   },
   "nav": {
     "label": "Site sections",
+    "hint": {
+      "pointer": "Scroll, or use the arrow keys, to move between sections.",
+      "touch": "Swipe up or down to move between sections."
+    },
     "about": "About me",
     "experience": "Experience",
     "links": "Links"
@@ -24,6 +28,7 @@
   },
   "a11y": {
     "skipToContent": "Skip to content",
+    "skipIntro": "Skip intro",
     "opensInNewTab": "(opens in a new tab)",
     "sectionAnnouncement": "{{section}} section"
   },

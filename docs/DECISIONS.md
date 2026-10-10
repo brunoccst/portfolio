@@ -383,15 +383,22 @@ The entrance runs for 1200ms and the exit for 900ms — both roughly double the
 first draft. At the shorter durations the movement registered as a jump rather
 than a slide.
 
-### The intro cannot be skipped
+### The intro can be skipped
 
-An earlier version had a skip button and an <kbd>Esc</kbd> handler. Both are
-gone: at about four and a half seconds the opening is short enough that an
-escape hatch was more clutter than help, and the button competed with the text
-it sat under.
+An earlier version had a skip button and an <kbd>Esc</kbd> handler, and both
+were removed because the button competed with the text it sat under. They are
+back, because four and a half seconds on every full page load with no way out
+was listed as a known issue. The button now sits near the bottom edge in small
+muted text, away from the line, and fades in with the separator.
 
-The reduced-motion bypass stays. That is an accessibility requirement rather
-than a convenience, and it removes the intro entirely.
+Clicking or tapping anywhere on the intro, <kbd>Esc</kbd>, <kbd>Enter</kbd>,
+<kbd>Space</kbd> and the button all do the same thing: the whole intro fades out
+over 300ms while the page fades in behind it. A skip does not play the reverse
+slide, which would make skipping take nearly as long as waiting.
+
+Under reduced motion the intro shows the finished line, still, for 1.5 seconds
+and then disappears without a fade. It used to be removed entirely, which meant
+those visitors never saw the opening at all.
 
 The intro plays on every full page load rather than once per session. Making it
 conditional on `sessionStorage` was considered and rejected: it makes the first
@@ -417,9 +424,12 @@ The choices worth recording, beyond the list in the README:
 - **The `|` is `aria-hidden`.** It is a visual divider. Read aloud it becomes
   "vertical line" between the name and the role.
 - **Reduced motion is handled twice.** `global.scss` neutralises every animation
-  through a media query, and `Intro.tsx` additionally checks the preference in
-  JavaScript so the intro is never mounted at all. The media query alone would
-  leave the intro on screen as a static card for three seconds.
+  through a media query, which leaves the intro as a still card, and `Intro.tsx`
+  checks the preference in JavaScript to shorten that card to 1.5 seconds.
+- **The section-change hint describes the navigation.** The line under the
+  navigation is the `<nav>`'s `aria-describedby`, so screen readers hear the
+  same instruction sighted visitors read. Only the phrasing for the current
+  input device is displayed, and hidden text is left out of the description.
 
 ---
 
@@ -433,6 +443,27 @@ visitor keeps the cached vendor chunks when only the app chunk changes.
 
 The split is expressed as a function over module ids rather than the object
 form, because Rollup's current types only accept a function.
+
+### oxlint instead of ESLint
+
+The project is on TypeScript 7, and `typescript-eslint` only supports
+TypeScript up to 6.0, so ESLint cannot parse the code yet. oxlint parses
+TypeScript itself and ships the React hooks and jsx-a11y rules that were the
+point of adding a linter. `.oxlintrc.json` turns on its correctness rules as
+errors and its suspicious rules as warnings, and `npm run lint` fails on either.
+
+Three rules are off: `prefer-tag-over-role` (it would swap `role="status"` and
+`role="group"` for elements with different semantics) and two import-style
+rules that flag the side-effect imports in `main.tsx`.
+
+If `typescript-eslint` gains TypeScript 7 support, moving to ESLint is an
+option, but nothing currently needs it.
+
+### Locale keys are checked at build time
+
+`scripts/check-locales.mjs` fails when `pt.json` has a key `en.json` lacks, or
+the other way round. It runs as part of `npm run build`, so Netlify refuses to
+deploy a half-translated page, and in CI.
 
 ### `dist` is not committed
 

@@ -68,6 +68,40 @@
   }
 }
 
+// Quiet line under the list saying how else to move between sections.
+.hint {
+  margin-top: var(--space-5);
+  max-width: 12rem;
+  color: var(--color-text-muted);
+  font-size: var(--text-xs);
+  line-height: var(--leading-snug);
+  opacity: 0;
+  // Arrives after the last navigation entry; `--item-index` is the entry count.
+  animation: hint-in var(--duration-slow) ease forwards;
+  animation-delay: calc(220ms + var(--item-index) * 70ms);
+}
+
+.hintTouch {
+  display: none;
+}
+
+// Touch screens have no wheel or arrow keys, so they get the swipe wording.
+@media (hover: none) and (pointer: coarse) {
+  .hintPointer {
+    display: none;
+  }
+
+  .hintTouch {
+    display: inline;
+  }
+}
+
+@keyframes hint-in {
+  to {
+    opacity: 1;
+  }
+}
+
 @keyframes item-in {
   from {
     opacity: 0;
@@ -108,10 +142,16 @@
     width: auto;
     height: 2px;
   }
+
+  .hint {
+    margin-top: var(--space-2);
+    max-width: none;
+  }
 }
 
 @include m.motion-reduce {
-  .item {
+  .item,
+  .hint {
     opacity: 1;
     animation: none;
   }
