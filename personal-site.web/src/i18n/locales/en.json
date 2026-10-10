@@ -32,6 +32,9 @@
     "opensInNewTab": "(opens in a new tab)",
     "sectionAnnouncement": "{{section}} section"
   },
+  "timeline": {
+    "present": "Present"
+  },
   "sections": {
     "about": {
       "title": "About me",
@@ -44,101 +47,7 @@
       ]
     },
     "experience": {
-      "title": "Experience",
-      "kicker": "2014 — present",
-      "items": [
-        {
-          "period": "Apr 2024 — Present",
-          "role": "Team Lead",
-          "organisation": "DocuWare",
-          "location": "Germany",
-          "summary": "I lead the Client Solutions team, which builds the self-service business portals used by DocuWare's partners and direct customers. I keep projects moving and the team supported: mentoring, hiring and onboarding, balancing workloads, keeping product owners, developers and operations aligned, and taking the first call when something needs escalating. I still write code for about a fifth of my time.",
-          "stack": [
-            "Team leadership",
-            "Mentoring",
-            "Hiring & onboarding",
-            "Scrum",
-            "Stakeholder alignment",
-            "React",
-            "TypeScript",
-            "ASP.NET Core"
-          ]
-        },
-        {
-          "period": "Nov 2020 — Apr 2024",
-          "role": "Software Engineer",
-          "organisation": "DocuWare",
-          "location": "Germany",
-          "summary": "Full-stack engineer with a focus on the front end, on the Client Solutions team — the range of solutions that support the company's ecosystem. I contributed to several scalable projects, from the database through to the interface.",
-          "stack": [
-            "ASP.NET Core",
-            "C#",
-            "F#",
-            "SQL",
-            "TypeScript",
-            "JavaScript",
-            "SCSS",
-            "React",
-            "StencilJS",
-            "Vaadin",
-            "Microservices",
-            "CI/CD",
-            "Terraform",
-            "Azure DevOps"
-          ]
-        },
-        {
-          "period": "May 2016 — Nov 2020",
-          "role": "Software Engineer",
-          "organisation": "MECOMO AG",
-          "location": "Brazil & Germany",
-          "summary": "I joined MECOM do Brasil, the group's Brazilian subsidiary, as a junior engineer and grew into a full-stack role on its telemetry platform — a web application for live data monitoring and report generation. I built new features, maintained existing code and handled requests from across the business, working from the Brazilian office and the German headquarters in turn.",
-          "stack": [
-            "ASP.NET Framework",
-            "ASP.NET MVC",
-            "C#",
-            "Microsoft SQL Server",
-            "JavaScript",
-            "jQuery",
-            "Bootstrap",
-            "Web Forms",
-            "Team Foundation Server"
-          ]
-        },
-        {
-          "period": "Mar 2015 — May 2016",
-          "role": "Software Engineer, Automated Tests",
-          "organisation": "DB Server — outsourced for Dell",
-          "location": "Brazil",
-          "summary": "Joined as an intern and was later promoted to software engineer. I worked on three outsourcing projects for Dell, responsible for developing their automated tests.",
-          "stack": [
-            "C#",
-            "ASP.NET",
-            "Selenium WebDriver",
-            "Postman",
-            "SoapUI",
-            "Team Foundation Server"
-          ]
-        },
-        {
-          "period": "Sep 2014 — Mar 2015",
-          "role": "Software Engineering Intern",
-          "organisation": "Microsoft Innovation Center & DB Server",
-          "location": "Brazil",
-          "summary": "Where my career started, on an acceleration programme run by the Microsoft Innovation Center and DB Server. I built the system DB Server used to publish its open positions and receive applications, and had my first contact with web development and agile practices.",
-          "stack": [
-            "ASP.NET MVC",
-            "C#",
-            "Entity Framework",
-            "Visual Studio",
-            "JavaScript",
-            "jQuery",
-            "Bootstrap",
-            "Scrum",
-            "Kanban"
-          ]
-        }
-      ]
+      "title": "Experience"
     },
     "links": {
       "title": "Links",

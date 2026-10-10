@@ -34,17 +34,18 @@ browser when you save a file.
 
 All scripts run from the `personal-site.web` folder.
 
-| Script | What it does |
-| --- | --- |
-| `npm run dev` | Starts the development server with hot reload. |
-| `npm run build` | Checks the locale files, type-checks the code, then writes the production files to `personal-site.web/dist`. |
-| `npm run preview` | Serves the contents of `dist` so you can check the production build. |
-| `npm run typecheck` | Runs the TypeScript compiler without producing files. |
-| `npm run lint` | Runs oxlint, including the React hooks and accessibility rules. Fails on any warning. |
-| `npm run format` | Rewrites every file with Prettier. |
-| `npm run format:check` | Reports files Prettier would change, without changing them. |
-| `npm run check:locales` | Fails when `en.json` and `pt.json` do not have the same keys. |
-| `npm run check` | Runs typecheck, lint, format check and the locale check in turn. |
+| Script                  | What it does                                                                                                 |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------ |
+| `npm run dev`           | Starts the development server with hot reload.                                                               |
+| `npm run build`         | Checks the locale files, type-checks the code, then writes the production files to `personal-site.web/dist`. |
+| `npm run preview`       | Serves the contents of `dist` so you can check the production build.                                         |
+| `npm run typecheck`     | Runs the TypeScript compiler without producing files.                                                        |
+| `npm run lint`          | Runs oxlint, including the React hooks and accessibility rules. Fails on any warning.                        |
+| `npm run format`        | Rewrites every file with Prettier.                                                                           |
+| `npm run format:check`  | Reports files Prettier would change, without changing them.                                                  |
+| `npm run check:locales` | Fails when `en.json` and `pt.json` do not have the same keys.                                                |
+| `npm test`              | Runs the tests once.                                                                                         |
+| `npm run check`         | Runs typecheck, lint, format check, the locale check and the tests in turn.                                  |
 
 Run `npm run check` before pushing. CI runs the same checks and the build on
 every pull request; see `.github/workflows/ci.yml`.
@@ -76,6 +77,7 @@ personal-site.web/
     ├── App.tsx           Intro sequence and the route table
     ├── components/       UI pieces, one folder per component
     ├── sections/         Content of the three site sections
+    ├── content/          Experience entries and the helpers that format them
     ├── config/           Section list shared by the router and the navigation
     ├── hooks/            Reusable pieces of behaviour
     ├── i18n/             Translation setup and the locale files
@@ -85,17 +87,17 @@ personal-site.web/
 
 ## Tech stack
 
-| Tool | Used for |
-| --- | --- |
-| [React 19](https://react.dev/) | Building the interface. |
-| [TypeScript](https://www.typescriptlang.org/) | Types for every file in `src`. |
-| [Vite](https://vite.dev/) | Dev server and production build. |
-| [React Router](https://reactrouter.com/) | Mapping URLs such as `/experience` to a section. |
-| [i18next](https://www.i18next.com/) + react-i18next | Loading text from locale files. |
-| [Material UI](https://mui.com/) | The icon buttons and tooltips in the top-right corner. |
-| [Sass](https://sass-lang.com/) | Writing the styles as SCSS. |
-| [oxlint](https://oxc.rs/docs/guide/usage/linter) | Linting, including React hooks and jsx-a11y rules. |
-| [Prettier](https://prettier.io/) | Formatting. |
+| Tool                                                | Used for                                               |
+| --------------------------------------------------- | ------------------------------------------------------ |
+| [React 19](https://react.dev/)                      | Building the interface.                                |
+| [TypeScript](https://www.typescriptlang.org/)       | Types for every file in `src`.                         |
+| [Vite](https://vite.dev/)                           | Dev server and production build.                       |
+| [React Router](https://reactrouter.com/)            | Mapping URLs such as `/experience` to a section.       |
+| [i18next](https://www.i18next.com/) + react-i18next | Loading text from locale files.                        |
+| [Material UI](https://mui.com/)                     | The icon buttons and tooltips in the top-right corner. |
+| [Sass](https://sass-lang.com/)                      | Writing the styles as SCSS.                            |
+| [oxlint](https://oxc.rs/docs/guide/usage/linter)    | Linting, including React hooks and jsx-a11y rules.     |
+| [Prettier](https://prettier.io/)                    | Formatting.                                            |
 
 ## How the page works
 
@@ -103,7 +105,7 @@ personal-site.web/
 
 `components/Layout/Layout.tsx` renders a `<main>` element that is fixed to the
 viewport and inset from every edge. Its stylesheet calls that element the
-*frame*. Everything the visitor reads lives inside it. The frame's top inset is
+_frame_. Everything the visitor reads lives inside it. The frame's top inset is
 larger than the other three, which leaves an empty band for the system controls
 that sit outside the frame.
 
@@ -153,12 +155,12 @@ reached its top or bottom does the input move to another section.
 
 Inputs the hook understands:
 
-| Input | Result |
-| --- | --- |
-| Mouse wheel or trackpad, 60px of travel | Next or previous section |
-| Vertical swipe of 56px or more | Next or previous section |
+| Input                                                           | Result                   |
+| --------------------------------------------------------------- | ------------------------ |
+| Mouse wheel or trackpad, 60px of travel                         | Next or previous section |
+| Vertical swipe of 56px or more                                  | Next or previous section |
 | <kbd>↓</kbd> <kbd>↑</kbd> <kbd>PageDown</kbd> <kbd>PageUp</kbd> | Next or previous section |
-| <kbd>Home</kbd> <kbd>End</kbd> | First or last section |
+| <kbd>Home</kbd> <kbd>End</kbd>                                  | First or last section    |
 
 After a change, further input is ignored for 700ms so one long gesture does not
 skip several sections.
@@ -171,12 +173,12 @@ or down" on touch screens and mentions the wheel and arrow keys elsewhere.
 `config/sections.ts` holds the ordered list of sections. Both the router and the
 side navigation read from it, so the two can never disagree.
 
-| URL | Section |
-| --- | --- |
-| `/` | Redirects to `/about` |
-| `/about` | About me |
-| `/experience` | Experience |
-| `/links` | Links |
+| URL           | Section               |
+| ------------- | --------------------- |
+| `/`           | Redirects to `/about` |
+| `/about`      | About me              |
+| `/experience` | Experience            |
+| `/links`      | Links                 |
 | anything else | Redirects to `/about` |
 
 ## Styling
@@ -188,18 +190,18 @@ affect another.
 
 Shared code lives in `src/styles`:
 
-| File | Contents |
-| --- | --- |
-| `_tokens.scss` | CSS custom properties: colours, spacing, font sizes, motion timings. |
+| File              | Contents                                                                    |
+| ----------------- | --------------------------------------------------------------------------- |
+| `_tokens.scss`    | CSS custom properties: colours, spacing, font sizes, motion timings.        |
 | `_variables.scss` | Sass values used at build time: breakpoints, easing curves, z-index layers. |
-| `_mixins.scss` | Reusable blocks such as `below()`, `motion-reduce` and `visually-hidden`. |
-| `global.scss` | Reset, `<body>` defaults, focus ring, skip link. |
+| `_mixins.scss`    | Reusable blocks such as `below()`, `motion-reduce` and `visually-hidden`.   |
+| `global.scss`     | Reset, `<body>` defaults, focus ring, skip link.                            |
 
 Import a shared file with `@use`:
 
 ```scss
-@use '../../styles/mixins' as m;
-@use '../../styles/variables' as v;
+@use "../../styles/mixins" as m;
+@use "../../styles/variables" as v;
 
 .example {
   color: var(--color-text);
@@ -248,8 +250,11 @@ them with the `t` function:
 
 ```tsx
 const { t } = useTranslation();
-return <h2>{t('sections.about.title')}</h2>;
+return <h2>{t("sections.about.title")}</h2>;
 ```
+
+Experience entries are the exception: they live in `src/content/`, with both
+languages in one place. See [Adding an experience entry](#adding-an-experience-entry).
 
 English is the default and the fallback: if a key is missing from `pt.json`, the
 English value is shown.
@@ -263,7 +268,7 @@ English value is shown.
 For arrays of strings or objects, use the `useTranslatedList` hook:
 
 ```tsx
-const paragraphs = useTranslatedList<string>('sections.about.paragraphs');
+const paragraphs = useTranslatedList<string>("sections.about.paragraphs");
 ```
 
 ### Adding a translation key
@@ -274,6 +279,40 @@ const paragraphs = useTranslatedList<string>('sections.about.paragraphs');
 
 Keep the two files in the same shape. `npm run check:locales` fails, and so does
 the build, when a key exists in only one file.
+
+## Adding an experience entry
+
+Timeline entries (experience) live in TypeScript files under `src/content/`,
+not in the locale files. Each entry keeps every language side by side, so
+adding one is a single edit. Add an object to the array in
+`src/content/experience.ts`:
+
+```ts
+{
+  start: '2026-01',
+  // end: '2026-12',   leave out while the role is ongoing
+  role: { en: 'Senior Engineer', pt: '…' },
+  organisation: 'Acme',
+  location: { en: 'Germany', pt: '…' },
+  summary: { en: 'One or two sentences about the role.', pt: '…' },
+  stack: ['React', 'TypeScript'],
+},
+```
+
+- `start` and `end` are months written as `YYYY-MM`. The page formats them
+  for the visitor's language (`Jan 2026`) and shows the "present" label from
+  the locale files when `end` is missing.
+- Any text field is either one string, used in every language, or an object
+  with one string per language. TypeScript fails the build if a language is
+  missing.
+- `stack` is optional; leave it out to show no tags.
+- Order does not matter: entries are sorted newest first. The year range
+  above the heading is worked out from the entries too.
+- The dash between dates and the dot before the location are drawn in
+  `Section.module.scss`, not written in the data.
+
+`npm test` checks that every date is a real month, that no entry ends before
+it starts and that no text is empty in any language.
 
 ## Adding a section
 
