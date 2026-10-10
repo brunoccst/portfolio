@@ -10,6 +10,10 @@
   },
   "nav": {
     "label": "Site sections",
+    "hint": {
+      "pointer": "Scroll, or use the arrow keys, to move between sections.",
+      "touch": "Swipe up or down to move between sections."
+    },
     "about": "About me",
     "experience": "Experience",
     "links": "Links"

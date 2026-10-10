@@ -10,7 +10,7 @@ export function SideNav() {
   const { t } = useTranslation();
 
   return (
-    <nav className={styles.nav} aria-label={t('nav.label')}>
+    <nav className={styles.nav} aria-label={t('nav.label')} aria-describedby="nav-hint">
       <ul className={styles.list}>
         {SECTIONS.map((section, index) => (
           <li
@@ -26,6 +26,18 @@ export function SideNav() {
           </li>
         ))}
       </ul>
+
+      {/* Scrolling, swiping and the arrow keys all change section, which
+          nothing else on the page would tell anyone. Only one of the two
+          phrasings is displayed, chosen by the input device. */}
+      <p
+        id="nav-hint"
+        className={styles.hint}
+        style={{ '--item-index': SECTIONS.length } as React.CSSProperties}
+      >
+        <span className={styles.hintPointer}>{t('nav.hint.pointer')}</span>
+        <span className={styles.hintTouch}>{t('nav.hint.touch')}</span>
+      </p>
     </nav>
   );
 }
